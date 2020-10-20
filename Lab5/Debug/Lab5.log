@@ -1,0 +1,3 @@
+﻿  Lab5.c
+C:\Users\Clark\Desktop\Lab5\Lab5.c(27): warning C4715: 'determine_bracket': not all control paths return a value
+  Lab5.vcxproj -> C:\Users\Clark\Desktop\Lab5\Debug\Lab5.exe
