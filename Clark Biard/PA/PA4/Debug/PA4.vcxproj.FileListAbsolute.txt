@@ -1,2 +1,4 @@
 C:\Users\Clark\Desktop\PA4\Debug\PA4.exe
 C:\Users\Clark\Desktop\PA4\Debug\PA4.pdb
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA\PA4\Debug\PA4.exe
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA\PA4\Debug\PA4.pdb

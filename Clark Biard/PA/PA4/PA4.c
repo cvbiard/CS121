@@ -83,3 +83,119 @@ double adjust_bank_balance(double bank_balance, double wager_amount, int add_or_
 		return bank_balance;
 	}
 }
+void phrase_picker(int state)
+{
+	int randn;
+	if (state == 0)
+	{
+		randn = rand() % 3;
+		if (randn == 0)
+		{
+			printf("You can't play with no funds, this is a betting game you know!\n");
+		}
+		if (randn == 1)
+		{
+			printf("Come on, don't be shy, how much you got in there?\n");
+		}
+		if (randn == 2)
+		{
+			printf("Got any dough? You need to put something in the casino account!\n");
+		}
+	}
+	if (state == 1)
+	{
+		randn = rand() % 3;
+		if (randn == 0)
+		{
+			printf("Go big or go home, that's what my momma always told me!\n");
+		}
+		if (randn == 1)
+		{
+			printf("Come on, lets not be stingy.\n");
+		}
+		if (randn == 2)
+		{
+			printf("Lemme see some numbers that would make Bond proud!\n");
+		}
+	}
+	if (state == 2)
+	{
+		randn = rand() % 3;
+		if (randn == 0)
+		{
+			printf("C'mon, roll big!\n");
+		}
+		if (randn == 1)
+		{
+			printf("Blow on them for good luck!\n");
+		}
+		if (randn == 2)
+		{
+			printf("I hope you're wearing your lucky socks!\n");
+		}
+	}
+	if (state == 3)
+	{
+		randn = rand() % 3;
+		if (randn == 0)
+		{
+			printf("Nice rolling!\n");
+		}
+		if (randn == 1)
+		{
+			printf("What a win, congrats!\n");
+		}
+		if (randn == 2)
+		{
+			printf("Now that you're loaded from that victory, lets go again and bet big!\n");
+		}
+	}
+	if (state == 4)
+	{
+		randn = rand() % 3;
+		if (randn == 0)
+		{
+			printf("Awe, better luck next time.\n");
+		}
+		if (randn == 1)
+		{
+			printf("Have you tried not washing you lucky sock? Some say a wash gets rid of the luck\n");
+		}
+		if (randn == 2)
+		{
+			printf("Good try, but there's no way you lose twice in a row right? Lets go again!\n");
+		}
+	}
+	if (state == 5)
+	{
+		randn = rand() % 3;
+		if (randn == 0)
+		{
+			printf("Time to make your point, lets see what you're made of!\n");
+		}
+		if (randn == 1)
+		{
+			printf("Going for point now, this is intense!\n");
+		}
+		if (randn == 2)
+		{
+			printf("You need to make your point, don't lose those nerves of steel now!\n");
+		}
+	}
+	if (state == 6)
+	{
+		randn = rand() % 3;
+		if (randn == 0)
+		{
+			printf("Thanks for playing! Your funds will be deposited back into your bank account after 1-10000000 business days.\n");
+		}
+		if (randn == 1)
+		{
+			printf("Going so soon? Well, you're welcome back any time.\n");
+		}
+		if (randn == 2)
+		{
+			printf("Quitting while you're ahead I see, smart!\n");
+		}
+	}
+}

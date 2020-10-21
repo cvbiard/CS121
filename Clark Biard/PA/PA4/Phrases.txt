@@ -1,0 +1,29 @@
+phrase picker
+joining the game (0)
+	"You can't play with no funds, this is a betting game you know!"
+	"Come on, don't be shy, how much you got in there?"
+	"Got any dough? You need to put something in the casino account!"
+wagering (1)
+	"Go big or go home, that's what my momma always told me!"
+	"Come on, lets not be stingy."
+	"Lemme see some numbers that would make Bond proud!"
+enter message (2)
+	"C'mon, roll big!"
+	"Blow on them for good luck!"
+	"I hope you're wearing your lucky socks!"
+win (3)
+	"Nice rolling!"
+	"What a win, congrats!"
+	"Now that you're loaded from that victory, lets go again and bet big!"
+loss (4)
+	"Awe, better luck next time."
+	"Have you tried not washing you lucky sock? Some say a wash gets rid of the luck"
+	"Good try, but there's no way you lose twice in a row right? Lets go again!"
+point (5)
+	"Time to make your point, lets see what you're made of!"
+	"Going for point now, this is intense!"
+	"You need to make your point, don't lose those nerves of steel now!"
+exit(6)
+	"Thanks for playing! Your funds will be deposited back into your bank account after 1-10000000 business days."
+	"Going so soon? Well, you're welcome back any time."
+	"Quitting while you're ahead I see, smart!"

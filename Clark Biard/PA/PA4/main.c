@@ -14,6 +14,7 @@ int main(void)
 		if (turn == 0)
 		{
 			print_rules();
+			phrase_picker(0);
 			balance = get_bank_balance();
 			turn = turn + 1;
 			turn1 = turn1 + 1;
@@ -22,6 +23,7 @@ int main(void)
 		{
 			if (turn == turn1)
 			{
+				phrase_picker(1);
 				wager = get_wager();
 				check = check_wager_amount(balance, wager);
 				while (check != 1)
@@ -32,9 +34,10 @@ int main(void)
 				}
 			}
 			
+			phrase_picker(2);
 			printf("Press enter to roll the dice!\n");
 			scanf("%c", &cr);
-			//system("cls");
+			
 	
 			dice1 = roll_die();
 			dice2 = roll_die();
@@ -48,6 +51,7 @@ int main(void)
 				wlp = is_win_loss_or_point(sum);
 				if (wlp == 0)
 				{
+					phrase_picker(4);
 					printf("You lose.\n");
 					balance = adjust_bank_balance(balance, wager, 0);
 					printf("Your new bank balance is $%.2lf.\n", balance);
@@ -59,6 +63,7 @@ int main(void)
 				}
 				else if (wlp == 1)
 				{
+					phrase_picker(3);
 					printf("You win\n");
 					balance = adjust_bank_balance(balance, wager, 1);
 					printf("Your new bank balance is $%.2lf.\n", balance);
@@ -70,6 +75,7 @@ int main(void)
 				}
 				else
 				{
+					phrase_picker(5);
 					point = sum;
 					turn = turn + 1;
 
@@ -81,6 +87,7 @@ int main(void)
 
 				if (pln == 0)
 				{
+					phrase_picker(4);
 					printf("You lose\n");
 					balance = adjust_bank_balance(balance, wager, 0);
 					printf("Your new bank balance is $%.2lf.\n", balance);
@@ -92,6 +99,7 @@ int main(void)
 				}
 				else if (pln == 1)
 				{
+					phrase_picker(3);
 					printf("You win\n");
 					balance = adjust_bank_balance(balance, wager, 1);
 					printf("Your new bank balance is $%.2lf.\n", balance);
@@ -103,6 +111,7 @@ int main(void)
 				}
 				else
 				{
+					phrase_picker(5);
 					point = sum;
 					turn = turn + 1;
 
@@ -110,4 +119,5 @@ int main(void)
 			}
 		}
 	}
+	phrase_picker(6);
 }
