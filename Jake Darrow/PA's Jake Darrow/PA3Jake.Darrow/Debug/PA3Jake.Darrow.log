@@ -1,0 +1,6 @@
+﻿  Main.c
+C:\Users\Owner\Desktop\CS121\PA3Jake.Darrow\Main.c(88,67): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Owner\Desktop\CS121\PA3Jake.Darrow\Main.c(24,1): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Source.c
+  Generating Code...
+  PA3Jake.Darrow.vcxproj -> C:\Users\Owner\Desktop\CS121\PA3Jake.Darrow\Debug\PA3Jake.Darrow.exe

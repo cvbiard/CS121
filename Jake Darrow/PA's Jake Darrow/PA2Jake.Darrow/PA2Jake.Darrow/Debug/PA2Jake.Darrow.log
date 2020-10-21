@@ -1,0 +1,7 @@
+﻿  Main.c
+C:\Users\Owner\Desktop\CS121\PA2Jake.Darrow\PA2Jake.Darrow\Main.c(48,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Owner\Desktop\CS121\PA2Jake.Darrow\PA2Jake.Darrow\Main.c(86,30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  PA2C.c
+C:\Users\Owner\Desktop\CS121\PA2Jake.Darrow\PA2Jake.Darrow\PA2C.c(33,39): warning C4028: formal parameter 3 different from declaration
+  Generating Code...
+  PA2Jake.Darrow.vcxproj -> C:\Users\Owner\Desktop\CS121\PA2Jake.Darrow\Debug\PA2Jake.Darrow.exe
