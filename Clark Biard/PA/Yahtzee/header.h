@@ -4,4 +4,4 @@
 #include <time.h>
 #include <stdlib.h>
 
-void roll_die(int* dice[5][5]);
+void roll_die(int dice[5][5]);
