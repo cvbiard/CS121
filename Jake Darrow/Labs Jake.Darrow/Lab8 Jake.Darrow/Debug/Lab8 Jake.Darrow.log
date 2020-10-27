@@ -1,0 +1,6 @@
+﻿  main.c
+C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\Labs Jake.Darrow\Lab8 Jake.Darrow\main.c(3,39): error C2099: initializer is not a constant
+C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\Labs Jake.Darrow\Lab8 Jake.Darrow\main.c(4,41): error C2099: initializer is not a constant
+  Source.c
+C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\Labs Jake.Darrow\Lab8 Jake.Darrow\Source.c(12,19): warning C4477: 'fprintf' : format string '%lf' requires an argument of type 'double', but variadic argument 1 has type 'int'
+  Generating Code...
