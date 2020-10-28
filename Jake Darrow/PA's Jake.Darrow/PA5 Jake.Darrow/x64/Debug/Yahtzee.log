@@ -1,8 +1,1 @@
-﻿  proto.c
-C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\proto.c(8,22): warning C4047: '==': 'int *' differs in levels of indirection from 'int'
-C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\proto.c(10,33): warning C4047: '=': 'int *' differs in levels of indirection from 'int'
-C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\proto.c(11,11): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'int *'
-C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\proto.c(11,11): warning C4313: 'printf': '%d' in format string conflicts with argument 1 of type 'int *'
-C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\proto.c(49,12): warning C4098: 'game_menu': 'void' function returning a value
-C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\proto.c(53,12): warning C4098: 'game_menu': 'void' function returning a value
-  Yahtzee.vcxproj -> C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\x64\Debug\PA5 Jake.Darrow.exe
+﻿  Yahtzee.vcxproj -> C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\x64\Debug\PA5 Jake.Darrow.exe
