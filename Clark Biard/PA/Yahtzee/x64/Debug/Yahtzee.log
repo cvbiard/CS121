@@ -1,0 +1,5 @@
+﻿  main.c
+  protos.c
+  Generating Code...
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA\Yahtzee\protos.c(50): warning C4715: 'game_menu': not all control paths return a value
+  Yahtzee.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\PA\Yahtzee\x64\Debug\Yahtzee.exe

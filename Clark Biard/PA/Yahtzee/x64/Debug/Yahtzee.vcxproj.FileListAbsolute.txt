@@ -1,0 +1,2 @@
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA\Yahtzee\x64\Debug\Yahtzee.exe
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA\Yahtzee\x64\Debug\Yahtzee.pdb
