@@ -1,3 +1,3 @@
-﻿  main.c
-  LINK : C:\Users\Clark\Desktop\CS121\Clark Biard\PA\Yahtzee\Debug\Yahtzee.exe not found or not built by the last incremental link; performing full link
+﻿  protos.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA\Yahtzee\protos.c(50): warning C4715: 'game_menu': not all control paths return a value
   Yahtzee.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\PA\Yahtzee\Debug\Yahtzee.exe
