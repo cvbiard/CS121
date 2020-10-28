@@ -1,6 +1,6 @@
 #include "header.h"
 
-void roll_5die(int dice1[5][5], int rollc)
+void roll_5die(int dice1[2][5], int rollc)
 {
 	int i = 0;
 	for (i = 0; i < 5; i++)
@@ -64,7 +64,7 @@ int game_menu()
 	}
 }
 
-int select_reroll(int dice1[5][5], char yn)
+int select_reroll(int dice1[2][5], char yn)
 {
 	int i = 0;
 	for (i = 0; i < 5; i++)
@@ -82,9 +82,8 @@ int select_reroll(int dice1[5][5], char yn)
 	}
 }
 
-void frequencyc(int dice1[5][5])
+void frequencyc(int dice1[2][5], int frequency_table[6])
 {
-	int frequency_table[6] = {0,0,0,0,0,0};
 	int index = 0;
 	for (int i = 0; i < 5; i++)
 	{
@@ -97,4 +96,48 @@ void frequencyc(int dice1[5][5])
 	printf("Threes: %d\n", frequency_table[2]);
 	printf("Fours: %d\n", frequency_table[3]);
 	printf("Fives: %d\n", frequency_table[4]);
+	printf("Sixes: %d\n", frequency_table[5]);
+}
+
+void present_options(int frequency_table[6])
+{
+	//Yahtzee Roll, all five die have same face
+	if (frequency_table[0] == 5 || frequency_table[1] == 5 || frequency_table[2] == 5 || frequency_table[3] == 5 || frequency_table[4] == 5)
+	{
+		printf("!!YAHTZEE!!\nIf not already selected, you may choose to call your roll a Yahtzee\nand earn a score of 50\n");
+	}
+
+	//Four of a kind
+	if (frequency_table[0] == 4 || frequency_table[1] == 4 || frequency_table[2] == 4 || frequency_table[3] == 4 || frequency_table[4] == 4)
+	{
+		printf("If not already selected, you may choose to call your roll a Four-of-a-kind\nand earn a score equal to the sum of your die\n");
+	}
+
+	//Three of a kind
+	if (frequency_table[0] == 3 || frequency_table[1] == 3 || frequency_table[2] == 3 || frequency_table[3] == 3 || frequency_table[4] == 3)
+	{
+		printf("If not already selected, you may choose to call your roll a Three-of-a-kind\nand earn a score equal to the sum of your die\n");
+	}
+
+	//Large Straight, Five die in a series
+	if ((frequency_table[0] == 1 && frequency_table[1] == 1 && frequency_table[2] == 1 && frequency_table[3] == 1 && frequency_table[4] == 1) ||
+		(frequency_table[1] == 1 && frequency_table[2] == 1 && frequency_table[3] == 1 && frequency_table[4] == 1 && frequency_table[5] == 1));
+	{
+		printf("If not already selected, you may choose to call your roll a Large Straight/and earn a score of 40 points\n");
+	}
+
+	//Small Straight, Four die in a series
+	if ((frequency_table[0] >= 1 && frequency_table[1] >= 1 && frequency_table[2] >= 1 && frequency_table[3] >= 1) ||
+		(frequency_table[1] >= 1 && frequency_table[2] >= 1 && frequency_table[3] >= 1 && frequency_table[4]) || 
+		(frequency_table[2] >= 1 && frequency_table[3] >= 1 && frequency_table[4] >= 1 && frequency_table[5] >= 1))
+	{
+		printf("If not already selected, you may choose to call your roll a Small Straight\nand earn a score of 30 points\n");
+	}
+
+	//Full House, two pairs and a set of three....None of the frequency values can equal 1
+	if (frequency_table[0] != 1 && frequency_table[1] != 1 && frequency_table[2] != 1 && frequency_table[3] != 1 && frequency_table[4] != 1 && frequency_table[5] != 1)
+	{
+		printf("If not already selected, you may choose to call your roll a Full House\nand earn a score of 25 points\n");
+	}
+
 }
