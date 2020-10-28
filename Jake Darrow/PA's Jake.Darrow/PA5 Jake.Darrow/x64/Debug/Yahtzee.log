@@ -1,8 +1,5 @@
-﻿  main.c
-C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\main.c(9,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
-  proto.c
+﻿  proto.c
 C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\proto.c(4,1): warning C4029: declared formal parameter list different from definition
-  Generating Code...
 C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\proto.c(65): warning C4715: 'game_menu': not all control paths return a value
 C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\proto.c(83): warning C4716: 'select_reroll': must return a value
   Yahtzee.vcxproj -> C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA5 Jake.Darrow\x64\Debug\PA5 Jake.Darrow.exe
