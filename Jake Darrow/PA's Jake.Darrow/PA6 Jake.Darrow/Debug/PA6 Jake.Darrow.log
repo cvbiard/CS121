@@ -1,5 +1,5 @@
-﻿  main.c
-  source.c
-  Generating Code...
-  LINK : C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA6 Jake.Darrow\Debug\PA6 Jake.Darrow.exe not found or not built by the last incremental link; performing full link
+﻿  source.c
+C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA6 Jake.Darrow\source.c(80): warning C4716: 'pick_turns': must return a value
+C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA6 Jake.Darrow\source.c(102): warning C4716: 'set_ships': must return a value
+C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA6 Jake.Darrow\source.c(67): warning C4715: 'game_menu': not all control paths return a value
   PA6 Jake.Darrow.vcxproj -> C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA6 Jake.Darrow\Debug\PA6 Jake.Darrow.exe
