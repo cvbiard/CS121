@@ -1,0 +1,4 @@
+﻿  main.c
+C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\Labs Jake.Darrow\Lab9 Jake.Darrow\main.c(68,9): warning C4013: 'gets' undefined; assuming extern returning int
+C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\Labs Jake.Darrow\Lab9 Jake.Darrow\main.c(7,17): warning C4101: 'revstr': unreferenced local variable
+  Lab9 Jake.Darrow.vcxproj -> C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\Labs Jake.Darrow\Lab9 Jake.Darrow\Debug\Lab9 Jake.Darrow.exe
