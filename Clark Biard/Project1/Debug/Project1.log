@@ -1,0 +1,8 @@
+﻿  Source.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\Project1\Source.c(32,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Project1\Source.c(192,15): warning C4133: '=': incompatible types - from 'int *' to 'char *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Project1\Source.c(193,15): warning C4133: '=': incompatible types - from 'int *' to 'char *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Project1\Source.c(195,34): warning C4133: 'function': incompatible types - from 'char *' to 'int *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Project1\Source.c(195,41): warning C4133: 'function': incompatible types - from 'char *' to 'int *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Project1\Source.c(22): warning C4715: 'calculate_grade_point': not all control paths return a value
+  Project1.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\Project1\Debug\Project1.exe
