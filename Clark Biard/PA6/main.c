@@ -26,9 +26,8 @@ int main(void)
 	//carrier.letter = 'c';
 
 
-	init_board(&player_board);
-	print_board(&player_board);
-	player_ships(&player_board, &ship_letters);
+	init_board(player_board);
 	print_board(player_board);
+	player_ships(player_board, ship_letters);
 	return 0;
 }

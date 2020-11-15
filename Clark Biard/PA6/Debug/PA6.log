@@ -1,22 +1,2 @@
 ﻿  protos.c
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(12,27): warning C4047: '=': 'char **' differs in levels of indirection from 'int'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(29,11): warning C4477: 'printf' : format string '%c' requires an argument of type 'int', but variadic argument 1 has type 'char **'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(41,26): warning C4047: '!=': 'char **' differs in levels of indirection from 'int'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(43,12): warning C4477: 'printf' : format string '%c' requires an argument of type 'int', but variadic argument 6 has type 'char *'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(52,29): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(54,12): warning C4477: 'printf' : format string '%c' requires an argument of type 'int', but variadic argument 6 has type 'char *'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(78,32): warning C4047: 'function': 'char **(*)[10]' differs in levels of indirection from 'char **[10]'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(78,27): warning C4024: 'ship_check': different types for formal and actual parameter 1
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(84,30): warning C4047: 'function': 'char **(*)[10]' differs in levels of indirection from 'char **[10]'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(84,25): warning C4024: 'ship_check': different types for formal and actual parameter 1
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(90,30): warning C4047: 'function': 'char **(*)[10]' differs in levels of indirection from 'char **[10]'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(90,25): warning C4024: 'ship_check': different types for formal and actual parameter 1
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(94,21): warning C4047: 'function': 'char *(*)[10]' differs in levels of indirection from 'char **(**)[10]'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(94,15): warning C4024: 'ship_placer': different types for formal and actual parameter 1
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(94,59): warning C4047: 'function': 'char ***' differs in levels of indirection from 'char'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(94,42): warning C4024: 'ship_placer': different types for formal and actual parameter 7
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(107,38): warning C4047: '=': 'char' differs in levels of indirection from 'char **'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(114,38): warning C4047: '=': 'char' differs in levels of indirection from 'char **'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(117,21): warning C4047: 'function': 'char **(*)[10]' differs in levels of indirection from 'char *'
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(117,14): warning C4024: 'print_board': different types for formal and actual parameter 1
   PA6.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\Debug\PA6.exe
