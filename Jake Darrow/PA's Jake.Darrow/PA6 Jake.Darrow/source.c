@@ -100,3 +100,144 @@ int set_ships()
 	}
 	
 }
+
+int ship_check(char board[10][10], int x, int y, char r, int ship)
+{
+	if (r == 'h')
+	{
+		for (int i = x; i < ship + x; i++)
+		{
+			if (board[i][y] != '~')
+			{
+				printf("You cannot place ship size %d at coordinate %d %d because that coordinate is occupied by a %c\n", ship, x, y, y, i, board[i][y]);
+				return 0;
+			}
+		}
+	}
+
+	else if (r == 'v')
+	{
+		for (int i = y; i < ship + y; i++)
+		{
+			if (board[x][i] != '~')
+			{
+				printf("You cannot place ship size % d at coordinate % d % d because that coordinate is occupied by a % c\n", ship, x, y, y, i, board[i][y]);
+				return 0;
+			}
+		}
+	}
+	printf("Your ship of size %d can be placed at coordinate %d %d", ship, x, y);
+	return 1;
+}
+
+void player_ships(char board[10][10], struct ship ships[5]) // incomplete, wanna talk with clark about reworking
+{
+	int x = 0, y = 0, check = 0, check3 = 0, shipi = 0;
+	char r = '\0';
+	
+	for (int i = 2; i < 6; i++)
+	{
+		while (check == 0)
+		{
+			switch (i)
+			{
+				case 3;
+					while (check == 0)
+					{
+						printf("State whether you'd like to place your ship vertically ('v') or horizontally ('h') then enter the left most coordinate of your")
+					}
+			}
+		}
+	}
+}
+
+void ship_placer(char board[10][10], int x, int y, char r, int ship, int shipi, struct ship ships[5])
+{
+	if (r == 'h')
+	{
+		for (int i = x; i < ship + x; i++)
+		{
+			board[y][i] = ships[shipi].letter;
+		}
+	}
+	
+	else if (r == 'v')
+	{
+		for (int i = y; i < ship + y; i++)
+		{
+			board[i][x] = ships[shipi].letter;
+		}
+	}
+	print_board(board, 0);
+}
+
+void bot_ships(char board[10][10], struct ship ships[5])
+{
+	int x = 0, y = 0, check = 0, check3 = 0, shipi = 0, rot = 0;
+	char r = '\0';
+
+	for (int i = 2; i < 6; i++)
+	{
+		while (check == 0)
+		{
+			switch (i)
+			{
+				case 3;
+					while (check3 == 0)
+					{
+						x = (rand() % 9);
+						y = (rand() % 9);
+						rot = (rand() % 2);
+
+						if (rot == 0)
+						{
+							r = 'h';
+						}
+						else
+						{
+							r = 'v';
+						}
+						check3 = ship_check(board, x, y, r, i);
+						ship_placer(board, x, y, r, i, shipi, ships);
+						shipi++;
+						printf("shipi is %d\n", shipi);
+					}
+					x = (rand() % 9);
+					y = (rand() % 9);
+					rot = (rand() % 2);
+
+					if (rot == 0)
+					{
+						r = 'h';
+					}
+					else
+					{
+						r = 'v';
+					}
+					check = ship_check(board, x, y, r, i);
+					break;
+
+				default:
+					x = (rand() % 9);
+					y = (rand() % 9);
+					rot = (rand() % 2);
+
+					if (rot == 0)
+					{
+						r = 'h';
+					}
+					else
+					{
+						r = 'v';
+					}
+					check = ship_check(board, x, y, r, i);
+					break;
+			}
+		}
+		
+		ship_placer(board, x, y, r, i, shipi, ships);
+		shipi++;
+		printf("shipi is %d\n", shipi);
+		check = 0;
+	}
+}
