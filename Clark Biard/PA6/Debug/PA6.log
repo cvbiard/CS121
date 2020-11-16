@@ -1,2 +1,6 @@
-﻿  protos.c
+﻿  main.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\main.c(5,7): warning C4013: 'srand' undefined; assuming extern returning int
+  protos.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(146,15): warning C4013: 'rand' undefined; assuming extern returning int
+  Generating Code...
   PA6.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\Debug\PA6.exe
