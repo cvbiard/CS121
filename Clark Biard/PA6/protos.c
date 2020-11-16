@@ -14,9 +14,18 @@ void init_board(char board[10][10])
 	}
 
 }
-void print_board(char board[10][10])
+void print_board(char board[10][10], int player)
 {
 	int vind, hind;
+	switch (player)
+	{
+	case 0:
+		printf("Printing player board\n");
+		break;
+	case 1:
+		printf("Printing bot board\n");
+		break;
+	}
 	printf("  0 1 2 3 4 5 6 7 8 9\n");
 	for (int i = 0; i < 10; i++)
 	{
@@ -60,7 +69,7 @@ int ship_check(char board[10][10], int x, int y, char r, int ship)
 	printf("The ship of size %d can be placed at the coords %d, %d\n", ship, x, y);
 	return 1;
 }
-void player_ships(char board[10][10], char ship_letters[5])
+void player_ships(char board[10][10], struct ship ships[5])
 {
 	int x = 0, y = 0, check = 0, check3 = 0, shipi = 0;
 	char r = '\0';
@@ -76,7 +85,7 @@ void player_ships(char board[10][10], char ship_letters[5])
 					printf("Please enter the x and y value for where you would like the left-most point of your first ship of length %d, as well as if you would like it oriented vertically ('v') or horizontally ('h') all seperated by a space.\n", i);
 					scanf("%d%*c%d%*c%c%*c", &x, &y, &r);
 					check3 = ship_check(board, x, y, r, i);
-					ship_placer(board, x, y, r, i, shipi, ship_letters);
+					ship_placer(board, x, y, r, i, shipi, ships);
 					shipi++;
 					printf("Shipi is %d\n", shipi);
 				}
@@ -92,28 +101,97 @@ void player_ships(char board[10][10], char ship_letters[5])
 				break;
 			}
 		}
-		ship_placer(board, x, y, r, i, shipi, ship_letters);
+		ship_placer(board, x, y, r, i, shipi, ships);
 		shipi++;
 		printf("Shipi is %d\n", shipi);
 		check = 0;
 	}
 	
 }
-void ship_placer(char board[10][10], int x, int y, char r, int ship, int shipi, char ship_letters[5])
+void ship_placer(char board[10][10], int x, int y, char r, int ship, int shipi, struct ship ships[5])
 {
+	/*ships[shipi].p1xpos = x;
+	ships[shipi].p1ypos = y;
+	ships[shipi].p1r = r;*/
+
 	if (r == 'h')
 	{
 		for (int i = x; i < ship + x; i++)
 		{
-			board[x][i] = ship_letters[shipi];
+			board[y][i] = ships[shipi].letter;
 		}
 	}
 	else if (r == 'v')
 	{
 		for (int i = y; i < ship + y; i++)
 		{
-			board[i][y] = ship_letters[shipi];
+			board[i][x] = ships[shipi].letter;
 		}
 	}
-	print_board(board);
+	print_board(board, 0);
+}
+void bot_ships(char board[10][10], struct ship ships[5])
+{
+	int x = 0, y = 0, check = 0, check3 = 0, shipi = 0, rot = 0;
+	char r = '\0';
+	for (int i = 2; i < 6; i++)
+	{
+		while (check == 0)
+		{
+			switch (i)
+			{
+			case 3:
+				while (check3 == 0)
+				{
+					x = (rand() % 9);
+					y = (rand() % 9);
+					rot = (rand() % 2);
+					if (rot == 0)
+					{
+						r = 'h';
+					}
+					else
+					{
+						r = 'v';
+					}
+					check3 = ship_check(board, x, y, r, i);
+					ship_placer(board, x, y, r, i, shipi, ships);
+					shipi++;
+					printf("Shipi is %d\n", shipi);
+				}
+				x = (rand() % 9);
+				y = (rand() % 9);
+				rot = (rand() % 2);
+				if (rot == 0)
+				{
+					r = 'h';
+				}
+				else
+				{
+					r = 'v';
+				}
+				check = ship_check(board, x, y, r, i);
+				break;
+
+			default:
+				x = (rand() % 9);
+				y = (rand() % 9);
+				rot = (rand() % 2);
+				if (rot == 0)
+				{
+					r = 'h';
+				}
+				else
+				{
+					r = 'v';
+				}
+				check = ship_check(board, x, y, r, i);
+				break;
+			}
+		}
+		ship_placer(board, x, y, r, i, shipi, ships);
+		shipi++;
+		printf("Shipi is %d\n", shipi);
+		check = 0;
+	}
 }
