@@ -7,7 +7,7 @@
 
 #define MAX_ROWS 10
 #define MAX_COLS 10
-
+// :)
 struct ship {
 
 	int size;
@@ -26,7 +26,7 @@ struct player
 	int hits;
 	int misses;
 	int shots;
-	float ratio;
+	double ratio;
 	char win;
 };
 

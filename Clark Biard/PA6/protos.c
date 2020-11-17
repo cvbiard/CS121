@@ -12,7 +12,7 @@ void init_board(struct player player)
 			player.board[vind][hind] = '~';
 		}
 	}
-
+	// :)
 }
 void print_board(struct player player, int hax)
 {
@@ -288,8 +288,8 @@ printf("Player 1 wins!\n");
 players[0].win = 'w';
 players[1].win = 'l';
 
-players[0].ratio = (players[0].hits / players[0].misses) * 100;
-players[1].ratio = (players[1].hits / players[1].misses) * 100;
+players[0].ratio = ((double)players[0].hits / (double)players[0].misses) * 100;
+players[1].ratio = ((double)players[1].hits / (double)players[1].misses) * 100;
 return 1;
 	}
 	return 0;
@@ -352,17 +352,32 @@ void pick_shot(struct player player, struct player players[2], struct ship ships
 	int x, y, check = 0;
 	if (player.id == 0)
 	{
-		while (check == 0)
+		if (go == 0)
 		{
-			printf("It's your turn to take a shot at your opponent. Please enter the x and y values you would like to shoot, seperated by a space.\n");
-			scanf("%d%*c%d%*c", &x, &y);
-			if (players[1].board[y][x] == 'x' || players[1].board[y][x] == 'o')
+			while (check == 0)
 			{
-				printf("You have already shot at that position before.\n");
+				printf("It's your turn to take a shot at your opponent. Please enter the x and y values you would like to shoot, seperated by a space.\n");
+				scanf("%d%*c%d%*c", &x, &y);
+				if (players[1].board[y][x] == 'x' || players[1].board[y][x] == 'o')
+				{
+					printf("You have already shot at that position before.\n");
+				}
+				else
+				{
+					check = 1;
+				}
 			}
-			else
+		}
+		else
+		{
+			while (check == 0)
 			{
-				check = 1;
+				x = (rand() % 9);
+				y = (rand() % 9);
+				if (players[1].board[y][x] != 'x' && players[1].board[y][x] != 'o')
+				{
+					check = 1;
+				}
 			}
 		}
 		take_shot(players[1], players, x, y, ships, counter, output);
@@ -385,17 +400,18 @@ void pick_shot(struct player player, struct player players[2], struct ship ships
 }
 void print_stats(struct player players[2], FILE* output)
 {
+	fprintf(output, "\n");
 	fprintf(output, "Stats for this game:\n");
 	fprintf(output, "Player 1's hits: %d\n", players[0].hits);
 	fprintf(output, "Player 1's misses: %d\n", players[0].misses);
 	fprintf(output, "Player 1's shots: %d\n", players[0].shots);
-	fprintf(output, "Player 1's hit to miss ratio: %lf%\n", players[0].ratio);
+	fprintf(output, "Player 1's hit to miss ratio: %.2lf%c\n", players[0].ratio, '%');
 	fprintf(output, "Did Player 1 win or lose?: %c\n", players[0].win);
 	fprintf(output, "\n");
 	fprintf(output, "Player 2's hits: %d\n", players[1].hits);
 	fprintf(output, "Player 2's misses: %d\n", players[1].misses);
 	fprintf(output, "Player 2's shots: %d\n", players[1].shots);
-	fprintf(output, "Player 2's hit to miss ratio: %lf%\n", players[1].ratio);
+	fprintf(output, "Player 2's hit to miss ratio: %.2lf%c\n", players[1].ratio, '%');
 	fprintf(output, "Did Player 2 win or lose?: %c\n", players[1].win);
 
 }

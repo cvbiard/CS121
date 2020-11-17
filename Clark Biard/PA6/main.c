@@ -14,7 +14,11 @@ int main(void)
 	{
 		player.board[i] = malloc(MAX_COLS * sizeof(char*)); // allocates the second dimension
 	}
-	
+	player.hits = 0;
+	player.misses = 0;
+	player.shots = 0;
+	player.ratio = 0.0;
+
 	struct player bot;
 	bot.id = 1;
 
@@ -24,6 +28,10 @@ int main(void)
 	{
 		bot.board[i] = malloc(MAX_COLS * sizeof(char*)); // allocates the second dimension
 	}
+	bot.hits = 0;
+	bot.misses = 0;
+	bot.shots = 0;
+	bot.ratio = 0.0;
 
 	struct ship destroyer;
 	destroyer.size = 2;
@@ -73,7 +81,7 @@ int main(void)
 	carrier.sunkp2 = 0;
 
 	struct ship ships[5] = { destroyer, submarine, cruiser, battleship, carrier };
-	struct player playa[2] = { player, bot };
+	struct player players[2] = { player, bot };
 	
 	game_menu();
 	turn = pick_turns();
@@ -83,28 +91,36 @@ int main(void)
 	print_board(player, 0);
 	player_ships(player, ships);
 
-	while (check_winner(playa, ships) == 0)
+	while (check_winner(players, ships) == 0)
 	{
 		if (turn == 0)
 		{
 			system("cls");
 			print_board(bot, 0);
 			print_board(player, 0);
-			pick_shot(player, playa, ships, 0, counter, output);
+			pick_shot(player, players, ships, 0, counter, output);
+			system("PAUSE");
+			system("cls");
+			print_board(bot, 0);
+			print_board(player, 0);
+			pick_shot(bot, players, ships, 0, counter, output);
 			system("PAUSE");
 			system("cls");
 		}
+		if (turn == 1)
+		{
 			system("cls");
 			print_board(bot, 0);
 			print_board(player, 0);
-			pick_shot(bot, playa, ships, 0, counter, output);
+			pick_shot(bot, players, ships, 0, counter, output);
 			system("PAUSE");
 			system("cls");
 			print_board(bot, 0);
 			print_board(player, 0);
-			pick_shot(player, playa, ships, 0, counter, output);
+			pick_shot(player, players, ships, 0, counter, output);
 			system("PAUSE");
 			system("cls");
+		}
 			counter = counter + 1;
 	}
 	print_stats(players, output);
