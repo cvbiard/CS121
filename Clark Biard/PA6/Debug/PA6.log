@@ -1,6 +1,19 @@
 ﻿  main.c
+<<<<<<< Updated upstream
 C:\Users\Jake\Desktop\Github\CS121\Clark Biard\PA6\main.c(5,7): warning C4013: 'srand' undefined; assuming extern returning int
   protos.c
 C:\Users\Jake\Desktop\Github\CS121\Clark Biard\PA6\protos.c(146,15): warning C4013: 'rand' undefined; assuming extern returning int
   Generating Code...
   PA6.vcxproj -> C:\Users\Jake\Desktop\Github\CS121\Clark Biard\PA6\Debug\PA6.exe
+=======
+  protos.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(129,57): warning C4020: 'ship_placer': too many actual parameters
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(182,57): warning C4020: 'ship_placer': too many actual parameters
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(273,65): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(274,65): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(291,65): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(292,65): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(336): warning C4715: 'game_menu': not all control paths return a value
+  PA6.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\Debug\PA6.exe
+>>>>>>> Stashed changes

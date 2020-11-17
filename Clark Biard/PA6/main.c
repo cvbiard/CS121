@@ -2,15 +2,9 @@
 
 int main(void)
 {
+	FILE *output = fopen("battleship.log", "w");
 	srand((int)time(NULL));
-
-	struct player bot_display;
-	bot_display.id = 2;
-	bot_display.board = malloc(MAX_ROWS * sizeof(char*)); // allocates one dimension
-	for (int i = 0; i < 10; i++)
-	{
-		bot_display.board[i] = malloc(MAX_COLS * sizeof(char*)); // allocates the second dimension
-	}
+	int turn, counter = 0;
 
 	struct player player;
 	player.id = 0;
@@ -79,23 +73,41 @@ int main(void)
 	carrier.sunkp2 = 0;
 
 	struct ship ships[5] = { destroyer, submarine, cruiser, battleship, carrier };
+	struct player playa[2] = { player, bot };
 	
+	game_menu();
+	turn = pick_turns();
 	init_board(player);
 	init_board(bot);
-	print_board(player, 0);
-	print_board(bot, 0);
-	player_ships(player, ships);
 	bot_ships(bot, ships);
-	for (int i = 0; i < 10; i++)
+	print_board(player, 0);
+	player_ships(player, ships);
+
+	while (check_winner(playa, ships) == 0)
 	{
-		for (int j = 0; j < 10; j++)
+		if (turn == 0)
 		{
-			
-			take_shot(bot, j, i, ships);
+			system("cls");
 			print_board(bot, 0);
-			print_board(bot, 1);
-			check_winner(ships);
+			print_board(player, 0);
+			pick_shot(player, playa, ships, 0, counter, output);
+			system("PAUSE");
+			system("cls");
 		}
+			system("cls");
+			print_board(bot, 0);
+			print_board(player, 0);
+			pick_shot(bot, playa, ships, 0, counter, output);
+			system("PAUSE");
+			system("cls");
+			print_board(bot, 0);
+			print_board(player, 0);
+			pick_shot(player, playa, ships, 0, counter, output);
+			system("PAUSE");
+			system("cls");
+			counter = counter + 1;
 	}
+	print_stats(players, output);
+	fclose(output);
 	return 0;
 }
