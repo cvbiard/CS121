@@ -1,6 +1,6 @@
-﻿  main.c
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\main.c(5,7): warning C4013: 'srand' undefined; assuming extern returning int
-  protos.c
-C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(142,13): warning C4013: 'rand' undefined; assuming extern returning int
-  Generating Code...
+﻿  protos.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(120,57): warning C4020: 'ship_placer': too many actual parameters
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(153,13): warning C4013: 'rand' undefined; assuming extern returning int
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(167,57): warning C4020: 'ship_placer': too many actual parameters
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\protos.c(232,7): warning C4013: 'exit' undefined; assuming extern returning int
   PA6.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\PA6\Debug\PA6.exe

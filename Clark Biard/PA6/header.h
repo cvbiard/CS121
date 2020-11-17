@@ -12,19 +12,24 @@ struct ship {
 	int size;
 	char letter;
 	char *name;
-	int p1pos[2][5];
-	int p2pos[2][5];
-	char hits[5];
-	char p1r;
-	char p2r;
+	int hitsp1;
+	int hitsp2;
+	int sunkp1;
+	int sunkp2;
 
 };
+struct player
+{
+	char **board;
+	int id;
+};
 
-void init_board(char board[10][10]);
-void print_board(char board[10][10]);
-int ship_check(char board[10][10], int x, int y, char r, int ship);
-void player_ships(char board[10][10], struct ship ships[5]);
-void ship_placer(char board[10][10], int x, int y, char r, int ship, int shipi, struct ship ships[5], int player);
-void bot_ships(char board[10][10], struct ship ships[5]);
-void take_shot(char board[10][10], int x, int y, struct ship ships[5]);
+void init_board(struct player player);
+void print_board(struct player player, int hax);
+int ship_check(struct player player, int x, int y, char r, int ship);
+void player_ships(struct player player, struct ship ships[5]);
+void ship_placer(struct player player, int x, int y, char r, int ship, int shipi, struct ship ships[5]);
+void bot_ships(struct player player, struct ship ships[5]);
+void take_shot(struct player player, int x, int y, struct ship ships[5]);
 void print_2darr(int arr[5][5]);
+void check_winner(struct ship ships[5]);

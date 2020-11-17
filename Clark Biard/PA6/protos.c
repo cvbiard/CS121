@@ -1,6 +1,6 @@
 #include "header.h"
 
-void init_board(char board[10][10])
+void init_board(struct player player)
 {
 	int vind, hind;
 	for (int i = 0; i < 10; i++)
@@ -9,30 +9,62 @@ void init_board(char board[10][10])
 		for (int i = 0; i < 10; i++)
 		{
 			hind = i;
-			board[vind][hind] = '~';
+			player.board[vind][hind] = '~';
 		}
 	}
 
 }
-void print_board(char board[10][10])
+void print_board(struct player player, int hax)
 {
 	int vind, hind;
-	printf("  0 1 2 3 4 5 6 7 8 9\n");
-	for (int i = 0; i < 10; i++)
+	
+	if (player.id == 0 || hax == 1)
 	{
-		vind = i;
-		printf("%d", i);
+		printf("  0 1 2 3 4 5 6 7 8 9\n");
 		for (int i = 0; i < 10; i++)
 		{
-			hind = i;
+			vind = i;
+			printf("%d", i);
+			for (int i = 0; i < 10; i++)
+			{
+				hind = i;
+				printf("|");
+				printf("%c", player.board[vind][hind]);
+			}
 			printf("|");
-			printf("%c", board[vind][hind]);
+			printf("\n");
 		}
-		printf("|");
-		printf("\n");
+	}
+	if (player.id == 1)
+	{
+		printf("  0 1 2 3 4 5 6 7 8 9\n");
+		for (int i = 0; i < 10; i++)
+		{
+			vind = i;
+			printf("%d", i);
+			for (int i = 0; i < 10; i++)
+			{
+				hind = i;
+				printf("|");
+				if (player.board[vind][hind] != '~' && player.board[vind][hind] != 'x')
+				{
+					printf("~");
+				}
+				else if (player.board[vind][hind] != '~')
+				{
+					printf("x");
+				}
+				else
+				{
+					printf("~");
+				}
+			}
+			printf("|");
+			printf("\n");
+		}
 	}
 }
-int ship_check(char board[10][10], int x, int y, char r, int ship)
+int ship_check(struct player player, int x, int y, char r, int ship)
 {	
 	if (r == 'h')
 	{
@@ -44,9 +76,9 @@ int ship_check(char board[10][10], int x, int y, char r, int ship)
 				printf("Going out of bounds\n");
 				return 0;
 			}
-			if (board[y][i+x] != '~')
+			if (player.board[y][i+x] != '~')
 			{
-				printf("The ship of size %d cannot be placed at the coords %d, %d because the space %d, %d is occupied by a %c\n", ship, x, y, x, i, board[y][i]);
+				printf("The ship of size %d cannot be placed at the coords %d, %d because the space %d, %d is occupied by a %c\n", ship, x, y, x, i, player.board[y][i]);
 				return 0;
 			}
 		}
@@ -61,9 +93,9 @@ int ship_check(char board[10][10], int x, int y, char r, int ship)
 				printf("Going out of bounds\n");
 				return 0;
 			}
-			if (board[i+y][x] != '~')
+			if (player.board[i+y][x] != '~')
 			{
-				printf("The ship of size %d cannot be placed at the coords %d, %d because the space %d, %d is occupied by a %c\n", ship, x, y, x, i, board[i][x]);
+				printf("The ship of size %d cannot be placed at the coords %d, %d because the space %d, %d is occupied by a %c\n", ship, x, y, x, i, player.board[i][x]);
 				return 0;
 			}
 		}
@@ -72,7 +104,7 @@ int ship_check(char board[10][10], int x, int y, char r, int ship)
 	printf("The ship of size %d can be placed at the coords %d, %d\n", ship, x, y);
 	return 1;
 }
-void player_ships(char board[10][10], struct ship ships[5])
+void player_ships(struct player player, struct ship ships[5])
 {
 	int x = 0, y = 0, check = 0, check3 = 0, shipi = 0;
 	char r = '\0';
@@ -82,56 +114,35 @@ void player_ships(char board[10][10], struct ship ships[5])
 		{
 			printf("Please enter the x and y value for where you would like the left-most point of your %s (length %d), as well as if you would like it oriented vertically ('v') or horizontally ('h') all seperated by a space.\n", ships[i].name, ships[i].size);
 			scanf("%d%*c%d%*c%c%*c", &x, &y, &r);
-			check = ship_check(board, x, y, r, ships[i].size);
+			check = ship_check(player, x, y, r, ships[i].size);
 			printf("check is: %d\n", check);
 		}
-		ship_placer(board, x, y, r, ships[i].size, i, ships, 0);
+		ship_placer(player, x, y, r, ships[i].size, i, ships, 0);
 		shipi++;
 		printf("Shipi is %d\n", shipi);
 		check = 0;
 	}
 	
 }
-void ship_placer(char board[10][10], int x, int y, char r, int ship, int shipi, struct ship ships[5], int player)
+void ship_placer(struct player player, int x, int y, char r, int ship, int shipi, struct ship ships[5])
 {
 	if (r == 'h')
 	{
 		for (int i = 0; i < ship; i++)
 		{
-			if (player == 0)
-			{
-				ships[shipi].p1pos[0][i] = x;
-				ships[shipi].p1pos[1][i] = y;
-			}
-			else if (player == 1)
-			{
-				ships[shipi].p2pos[0][i] = x;
-				ships[shipi].p2pos[1][i] = y;
-			}
-			board[y][i + x] = ships[shipi].letter;
+			player.board[y][i + x] = ships[shipi].letter;
 		}
 	}
 	else if (r == 'v')
 	{
 		for (int i = 0; i < ship; i++)
 		{
-			if (player == 0)
-			{
-				ships[shipi].p1pos[0][i] = x;
-				ships[shipi].p1pos[1][i] = y;
-			}
-			else if (player == 1)
-			{
-				ships[shipi].p2pos[0][i] = x;
-				ships[shipi].p2pos[1][i] = y;
-			}
-			board[i + y][x] = ships[shipi].letter;
+			player.board[i + y][x] = ships[shipi].letter;
 		}
 	}
-	print_2darr(ships[shipi].p1pos);
-	print_board(board);
+	print_board(player, 1);
 }
-void bot_ships(char board[10][10], struct ship ships[5])
+void bot_ships(struct player player, struct ship ships[5])
 {
 	int x = 0, y = 0, check = 0, check3 = 0, shipi = 0, rot = 0;
 	char r = '\0';
@@ -150,43 +161,50 @@ void bot_ships(char board[10][10], struct ship ships[5])
 			{
 				r = 'v';
 			}
-			check = ship_check(board, x, y, r, ships[i].size);
+			check = ship_check(player, x, y, r, ships[i].size);
 			printf("check is: %d\n", check);
 		}
-		ship_placer(board, x, y, r, ships[i].size, i, ships, 1);
+		ship_placer(player, x, y, r, ships[i].size, i, ships, 1);
 		shipi++;
 		check = 0;
 	}
 }
-void take_shot(char board[10][10], int x, int y, struct ship ships[5])
+void take_shot(struct player player, int x, int y, struct ship ships[5])
 {
-	/*int xpos = 0, ypos = 0;
-	for (int j = 0; j < 5; j++)
+	if (player.id == 0)
 	{
-		printf("Checking %s\n", ships[j].name);
-		for (int i = 0; i < ships[j].size; i++)
+		for (int i = 0; i < 5; i++)
 		{
-			int vind = i;
-			for (int i = 0; i < ships[i].size; i++)
+			if (player.board[y][x] == ships[i].letter)
 			{
-				if (i == 0)
+				printf("Gottem\n");
+				ships[i].hitsp1 = ships[i].hitsp1 + 1;
+				printf("Hits on this ship: %d\n", ships[i].hitsp1);
+				player.board[y][x] = 'x';
+				if (ships[i].hitsp1 == ships[i].size - 1)
 				{
-					xpos = ships[i].p1pos[i][vind];
+					ships[i].sunkp1 = 1;
 				}
-				if (i == 1)
-				{
-					ypos = ships[i].p1pos[i][vind];
-				}
-
-			}
-			printf("Looking at space %d, %d\n", xpos, ypos);
-			if (x == xpos && y == ypos);
-			{
-				printf("got a hit on %s\n", ships[i].name);
-				ships[i].hits[i] = 'x';
 			}
 		}
-	}*/
+	}
+	if (player.id == 1)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			if (player.board[y][x] == ships[i].letter)
+			{
+				printf("Gottem\n");
+				ships[i].hitsp2 = ships[i].hitsp2 + 1;
+				printf("Hits on this ship: %d\n", ships[i].hitsp2);
+				player.board[y][x] = 'x';
+				if (ships[i].hitsp2 == ships[i].size - 1)
+				{
+					ships[i].sunkp2 = 1;
+				}
+			}
+		}
+	}
 }
 void print_2darr(int arr[5][5])
 {
@@ -196,5 +214,34 @@ void print_2darr(int arr[5][5])
 		{
 			printf("Value at position %d, %d of this array is %d\n", i, j, arr[i][j]);
 		}
+	}
+}
+void check_winner(struct ship ships[5])
+{
+	int counter = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		if (ships[i].sunkp1 == 1)
+		{
+			counter = counter + 1;
+		}
+	}
+	if (counter == 5)
+	{
+		printf("Player 2 wins!\n");
+		exit(0);
+	}
+	counter = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		if (ships[i].sunkp2 == 1)
+		{
+			counter = counter + 1;
+		}
+	}
+	if (counter == 5)
+	{
+		printf("Player 1 wins!\n");
+		exit(0);
 	}
 }
