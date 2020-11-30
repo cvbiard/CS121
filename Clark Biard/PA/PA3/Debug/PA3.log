@@ -1,1 +1,6 @@
-﻿  PA3.vcxproj -> C:\Users\Clark\Desktop\PA3\Debug\PA3.exe
+﻿  main.c
+  PA3.c
+  Generating Code...
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA\PA3\PA3.c(126): warning C4715: 'read_int': not all control paths return a value
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA\PA3\PA3.c(117): warning C4715: 'read_double': not all control paths return a value
+  PA3.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\PA\PA3\Debug\PA3.exe

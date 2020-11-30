@@ -1,0 +1,2 @@
+C:\Users\Clark\Desktop\CS121\Clark Biard\Pointers\Debug\Pointers.exe
+C:\Users\Clark\Desktop\CS121\Clark Biard\Pointers\Debug\Pointers.pdb

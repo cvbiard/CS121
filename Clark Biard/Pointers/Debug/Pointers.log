@@ -1,0 +1,6 @@
+﻿  protos.c
+  source.c
+  Generating Code...
+C:\Users\Clark\Desktop\CS121\Clark Biard\Pointers\protos.c(44): warning C4716: 'multiply_array': must return a value
+C:\Users\Clark\Desktop\CS121\Clark Biard\Pointers\protos.c(26): warning C4716: 'change_array': must return a value
+  Pointers.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\Pointers\Debug\Pointers.exe
