@@ -12,6 +12,8 @@ void print_board(char board[MAX_ROWS][MAX_COLS], int rows, int cols);
 
 int game_menu();
 
-int pick_turns();
+int pick_turns(int decision[]);
 
-int set_ships();
+int set_ships(int decision[], char board);
+
+int ship_check(char board[10][10], int xcoor, int ycoor, char orientation, int ship);

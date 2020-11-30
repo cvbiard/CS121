@@ -66,9 +66,8 @@ int game_menu()
 	}
 }
 
-int pick_turns()
+int pick_turns(int decision[])
 {
-	int decision[1];
 	printf("Press enter to see who gets to go first\n");
 	system("PAUSE");
 	system("CLS");
@@ -79,24 +78,86 @@ int pick_turns()
 
 }
 
-int set_ships()
+int set_ships(int decision[], char board[10][10], int xcoor, int ycoor, char orientation)
 {
-	char orientation = '\0';
+	int xcoor = 0, ycoor = 0;
+
 	printf("Player 1, you will now set the position of your ships starting with your carrier\n\nWould you like to set carrier vertically or horizontally?\n\nPlease enter v for vertically or h for horizontally\n");
 	scanf(" %c", &orientation);
-	
+
 	while (orientation != 'v' && orientation != 'h')
 	{
-		printf("Please only enter lowercase character 'v' or 'h' to indicate the orientation you'd like to set your Carrier\n");
-		scanf(" %c", &orientation);
+			printf("Please only enter lowercase character 'v' or 'h' to indicate the orientation you'd like to set your Carrier\n");
+			scanf(" %c", &orientation);
 	}
+
 	if (orientation == 'v') //Vertical
 	{
-
+		printf("Please enter the x y coordinate you'd like to place the top of your cruiser\n");
+		scanf("%d%d", &xcoor, &ycoor);
+		while (ycoor < 0 || ycoor > 6)
+		{
+			printf("You cannot place your carrier at %d %d because part or all of the ship will be off the board\nPlease enter a valid x y coordinate\n", xcoor, ycoor);
+			scanf("%d%d", &xcoor, &ycoor);
+		}
 	}
 	if (orientation == 'h') //Horizontal
 	{
 
 	}
-	
+}
+
+int ship_check(char board[10][10], int xcoor, int ycoor, char orientation, int ship)
+{
+	char point = board[xcoor][ycoor];
+
+	if (orientation == 'h')
+	{
+		for (int i = xcoor; i < ship + xcoor; i++)
+		{
+			if (board[i][ycoor] != '~')
+			{
+				printf("Something is aleady placed there ):\n");
+				return 0;
+			}
+		}
+	}
+	else if (orientation == 'v')
+	{
+		for (int i = ycoor; i < ship + ycoor; i++)
+		{
+			if (board[xcoor][i] != '~')
+			{
+				printf("Something is aleady placed there ):\n");
+				return 0;
+			}
+		}
+	}
+
+	printf("Ship of size %d can be placed at %d %d\n", ycoor, xcoor);
+	return 1;
+}
+
+int player_ships(char board[10][10])
+{
+	int x = 0, y = 0, check = 0, check3 = 0;
+	char orientation = '\0';
+	for (int i = 2; i < 5; i++)
+	{
+		while (check == 0)
+		{
+			switch (i)
+			{
+				case 3;
+					while (check3 == 0)
+					{
+						printf("Please enter the x y coordinate you'd like to place the left-most portion of your %d long ship\nPlease also enter the orientation of your ship either v for vertical or h for horizontal\n", i);
+						scanf("%d%*c%d%*c%c%*c")
+					}
+					printf("Please enter the x y coordinate you'd like to place the left-most portion of your %d long ship\nPlease also enter the orientation of your ship either v for vertical or h for horizontal\n", i);
+					scanf("")
+			}
+				
+		}
+	}
 }
