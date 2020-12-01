@@ -76,6 +76,10 @@ int main(void)
 
 	struct card cards[52] = { AceH, AceD, AceC, AceS, TwoH, TwoD, TwoC, TwoS, ThreeH, ThreeD, ThreeC, ThreeS, FourH, FourD, FourC, FourS, FiveH, FiveD, FiveC, FiveS, SixH, SixD, SixC, SixS, SevenH, SevenD, SevenC, SevenS, EightH, EightD, EightC, EightS, NineH, NineD, NineC, NineS, TenH, TenD, TenC, TenS, JackH, JackD, JackC, JackS, QueenH, QueenD, QueenC, QueenS, KingH, KingD, KingC, KingS };
 
+	struct player player1;
+	struct player cpu;
+	player1.wallet = 0;
+	cpu.wallet = 0;
 
 	srand((unsigned)time(NULL)); /* seed random-number generator */
 

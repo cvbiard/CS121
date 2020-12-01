@@ -113,3 +113,10 @@ int game_menu()
 		}
 	}
 }
+
+void ante_up()
+{
+	printf("Press enter to place the $5 ante for the round");
+	system("PAUSE");
+
+}
