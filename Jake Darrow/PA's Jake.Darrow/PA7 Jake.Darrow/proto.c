@@ -114,9 +114,30 @@ int game_menu()
 	}
 }
 
-void ante_up()
+void ante_up(double pot, struct player player1, struct player cpu)
 {
 	printf("Press enter to place the $5 ante for the round");
 	system("PAUSE");
+	player1.wallet -= 5;
+	cpu.wallet -= 5;
+	pot += 10;
+	printf("$10 was added to the pot");
+	
+}
 
+void decide_turns(struct player player1, struct player cpu)
+{
+	printf("Press enter to see who goes first\n");
+	system("PAUSE");
+	player1.turn = rand() % 2;
+	if (player1.turn = 1)
+	{
+		cpu.turn = 0;
+		printf("CPU goes first");
+	}
+	else
+	{
+		cpu.turn = 1;
+		printf("Player 1 goes first (:\n");
+	}
 }

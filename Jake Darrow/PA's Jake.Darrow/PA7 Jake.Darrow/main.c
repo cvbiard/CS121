@@ -81,6 +81,8 @@ int main(void)
 	player1.wallet = 0;
 	cpu.wallet = 0;
 
+	double pot = 0;
+
 	srand((unsigned)time(NULL)); /* seed random-number generator */
 
 	/* initialize suit array */

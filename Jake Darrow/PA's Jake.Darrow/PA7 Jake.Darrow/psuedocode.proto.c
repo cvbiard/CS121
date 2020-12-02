@@ -1,3 +1,5 @@
+#include "header.h"
+
 // DEAL CARDS--After deck is shuffled five cards need to be dealt to player and to computer
 
 //TURN CHOOSER--randomly decides if player or cpu goes first
@@ -21,6 +23,8 @@
 
 //CHOOSE BET MOVE
 //{
-//	prompts player to either fold, call, raise, or all in
+//	prompts player to either fold, call, raise, or go all in
 //	while loop runs to safety check that only one of the options is picked
 //}
+
+//DRAW
