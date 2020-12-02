@@ -81,6 +81,8 @@ int main(void)
 	player1.wallet = 0;
 	cpu.wallet = 0;
 
+	player1.play_again = 'y';
+
 	double pot = 0;
 
 	srand((unsigned)time(NULL)); /* seed random-number generator */
@@ -102,6 +104,12 @@ int main(void)
 	game_menu();
 	init_cards(cards);
 	print_cards(cards, face, suit);
+	while (player1.play_again == 'y') //Grand loop rounds run inside of
+	{
+
+
+		play_again(player1);
+	}
 
 	return 0;
 }

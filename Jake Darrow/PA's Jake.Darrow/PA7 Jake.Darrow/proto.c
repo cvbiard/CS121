@@ -130,7 +130,7 @@ void decide_turns(struct player player1, struct player cpu)
 	printf("Press enter to see who goes first\n");
 	system("PAUSE");
 	player1.turn = rand() % 2;
-	if (player1.turn = 1)
+	if (player1.turn == 1)
 	{
 		cpu.turn = 0;
 		printf("CPU goes first");
@@ -139,5 +139,40 @@ void decide_turns(struct player player1, struct player cpu)
 	{
 		cpu.turn = 1;
 		printf("Player 1 goes first (:\n");
+	}
+}
+
+void player_choose_bet_move(struct player player1)
+{
+	printf("please enter the first inital of the action you'd like to take\nfold, call, raise, all-in\n");
+	scanf(" %c", &player1.bet_move);
+	while (player1.bet_move != 'f' && player1.bet_move != 'c' && player1.bet_move != 'r' && player1.bet_move != 'a')
+	{
+		printf("please enter a valid lowercase character 'f' 'c' 'r' or 'a' to represent fold, call, raise, or all-in\n");
+		scanf(" %c", &player1.bet_move);
+	}
+}
+
+void play_again(struct player player1)
+{
+	printf("Would you like to keep playing?\n\ny	n\n");
+	scanf(" %c", &player1.play_again);
+}
+
+void disperse_pot(struct player player1, struct player cpu, double pot)
+{
+	if (player1.win == 'w')
+	{
+		player1.wallet += pot;
+		printf("Your hand won!\nNow you have %lf in your wallet\n", player1.wallet);
+	}
+	if (player1.win == 'l')
+	{
+		cpu.wallet += pot;
+		printf("CPU's hand won\nThe CPU now has %lf in their wallet\n", cpu.wallet);
+	}
+	else
+	{
+		printf("If you're reading this...something isn't working as intended\n");
 	}
 }

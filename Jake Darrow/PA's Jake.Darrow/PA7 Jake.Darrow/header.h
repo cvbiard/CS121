@@ -19,6 +19,9 @@ struct player
 {
 	double wallet;
 	int turn;
+	char bet_move;
+	char play_again;
+	char win;
 };
 
 void shuffle(int wDeck[][13]);
@@ -28,3 +31,5 @@ void print_cards(struct card cards[52], const char* wFace[], const char* wSuit[]
 int game_menu();
 void ante_up(double pot, struct player player1, struct player cpu);
 void decide_turns(struct player player1, struct player cpu);
+void player_choose_bet_move(struct player player1);
+void disperse_pot(struct player player1, struct player cpu, double pot);
