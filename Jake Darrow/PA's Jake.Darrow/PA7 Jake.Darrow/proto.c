@@ -146,7 +146,7 @@ void player_choose_bet_move(struct player player1)
 {
 	printf("please enter the first inital of the action you'd like to take\nfold, call, raise, all-in\n");
 	scanf(" %c", &player1.bet_move);
-	while (player1.bet_move != 'f' && player1.bet_move != 'c' && player1.bet_move != 'r' && player1.bet_move != 'a')
+	while (((player1.bet_move != 'f' && player1.bet_move != 'c') && player1.bet_move != 'r') && player1.bet_move != 'a')
 	{
 		printf("please enter a valid lowercase character 'f' 'c' 'r' or 'a' to represent fold, call, raise, or all-in\n");
 		scanf(" %c", &player1.bet_move);
@@ -175,4 +175,32 @@ void disperse_pot(struct player player1, struct player cpu, double pot)
 	{
 		printf("If you're reading this...something isn't working as intended\n");
 	}
+}
+
+void frequencyc(struct hand p1, int frequency_table[13][2])
+{
+	for(int k = 0; k<13;k++)
+		{
+			for (int j = 0; j < 2; j++)
+			{
+				frequency_table[k][j] = 0;
+			}
+		}
+	printf("\n\nCombo Table:\n");
+	int index1 = 0, index2 = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		index1 = p1.array[i].face - 1;
+		frequency_table[index1][0]++;
+		index2 = p1.array[i].suit - 1;
+		frequency_table[index2][1]++;
+	}
+
+
+	/*printf("Ones: %d\n", frequency_table[0]);
+	printf("Twos: %d\n", frequency_table[1]);
+	printf("Threes: %d\n", frequency_table[2]);
+	printf("Fours: %d\n", frequency_table[3]);
+	printf("Fives: %d\n", frequency_table[4]);
+	printf("Sixes: %d\n\n", frequency_table[5]);*/
 }

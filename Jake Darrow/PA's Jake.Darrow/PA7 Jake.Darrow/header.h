@@ -14,7 +14,6 @@ struct hand
 {
 	struct card array[5];
 };
-
 struct player
 {
 	double wallet;
@@ -33,3 +32,4 @@ void ante_up(double pot, struct player player1, struct player cpu);
 void decide_turns(struct player player1, struct player cpu);
 void player_choose_bet_move(struct player player1);
 void disperse_pot(struct player player1, struct player cpu, double pot);
+void frequencyc(int dice1[2][5], int frequency_table[6]);
