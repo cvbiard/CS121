@@ -9,6 +9,8 @@ struct card
 	int face;
 	int suit;
 	int id;
+	char* faces;
+	char* suits;
 };
 struct hand
 {
@@ -23,13 +25,13 @@ struct player
 	char win;
 };
 
-void shuffle(int wDeck[][13]);
-void deal(const int wDeck[][13], const char* wFace[], const char* wSuit[]);
-void init_cards(struct card cars[52]);
-void print_cards(struct card cards[52], const char* wFace[], const char* wSuit[]);
+void shuffle(struct card wDeck[52], struct card cards[52]);
+void deal(struct card wDeck[52], struct card hand[5], struct card dummy, int deckposition);
+void init_cards(struct card cards[52], const char* wFace[], const char* wSuit[]);
+void print_cards(struct card cards[52]);
 int game_menu();
 void ante_up(double pot, struct player player1, struct player cpu);
 void decide_turns(struct player player1, struct player cpu);
 void player_choose_bet_move(struct player player1);
 void disperse_pot(struct player player1, struct player cpu, double pot);
-void frequencyc(int dice1[2][5], int frequency_table[6]);
+void frequency_function(int dice1[2][5], int frequency_table[6]);

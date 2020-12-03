@@ -84,6 +84,7 @@ int main(void)
 	player1.play_again = 'y';
 
 	double pot = 0;
+	int deckposition = 0;
 
 	srand((unsigned)time(NULL)); /* seed random-number generator */
 
