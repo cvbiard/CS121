@@ -1,6 +1,6 @@
 #include "header.h"
 
-void shuffle(struct card wDeck[52], struct card cards[52])
+void shuffle(int wDeck[][13])
 {
 	int row = 0;    /* row number */
 	int column = 0; /*column number */
@@ -12,32 +12,39 @@ void shuffle(struct card wDeck[52], struct card cards[52])
 		/* choose new random location until unoccupied slot found */
 		do
 		{
-			row = rand() % 52;
-		} while (wDeck[row].id != -1);
+			row = rand() % 4;
+			column = rand() % 13;
+		} while (wDeck[row][column] != 0);
 
 		/* place card number in chosen slot of deck */
-		wDeck[row] = cards[card];
-		printf("Placed card id %d at position %d\n", cards[card].id, row);
+		wDeck[row][column] = card;
 	}
 }
-void deal(struct card wDeck[52], struct card hand[5], struct card dummy, int deckpos)
+void deal(const int wDeck[][13], const char* wFace[], const char* wSuit[])
 {
-
+	int row = 0;    /* row number */
+	int column = 0; /*column number */
 	int card = 0;   /* card counter */
 
 	/* deal each of the 52 cards */
-	for (card = deckpos; card < deckpos+5; card++)
+	for (card = 1; card <= 52; card++)
 	{
-		if (wDeck[card].id >= 0)
-		{	
-			hand[card - deckpos] = wDeck[card];
-			printf("Card in hand at positiond %d has id %d, and is a %s of %s\n", card - deckpos, wDeck[card].id, wDeck[card].faces, wDeck[card].suits);
-			wDeck[card] = dummy;
+		/* loop through rows of wDeck */
+		for (row = 0; row <= 3; row++)
+		{
+			/* loop through columns of wDeck for current row */
+			for (column = 0; column <= 12; column++)
+			{
+				/* if slot contains current card, display card */
+				if (wDeck[row][column] == card)
+				{
+					printf("%5s of %-8s%c", wFace[column], wSuit[row], card % 2 == 0 ? '\n' : '\t');
+				}
+			}
 		}
 	}
-	deckpos = card;
 }
-void init_cards(struct card cards[52], const char* wFace[], const char* wSuit[])
+void init_cards(struct card cards[52])
 {
 	int counter = 0;
 		for (int i = 0; i < 52; i = i + 4)
@@ -45,7 +52,6 @@ void init_cards(struct card cards[52], const char* wFace[], const char* wSuit[])
 			for (int j = 0; j < 4; j++)
 			{
 				cards[j + i].face = counter;
-				cards[j + i].faces = wFace[counter];
 			}
 			counter = counter + 1;
 		}
@@ -57,16 +63,15 @@ void init_cards(struct card cards[52], const char* wFace[], const char* wSuit[])
 			for (int l = 0; l < 4; l++)
 			{
 				cards[counter].suit = l;
-				cards[counter].suits = wSuit[l];
 				cards[counter].id = counter;
 				counter = counter + 1;
 			}
 		}
 }
-void print_cards(struct card cards[52])
+void print_cards(struct card cards[52], const char* wFace[], const char* wSuit[])
 {
 	for (int i = 0; i < 52; i++)
 	{
-		printf("I is %d\nCard of face %s, (%d) and and suit of %s (%d) has an ID of %d.\n", i, cards[i].faces, cards[i].face, cards[i].suits, cards[i].suit, cards[i].id);
+		printf("I is %d\nCard of face %s, (%d) and and suit of %s (%d) has an ID of %d.\n", i, wFace[cards[i].face], cards[i].face, wSuit[cards[i].suit], cards[i].suit, cards[i].id);
 	}
 }

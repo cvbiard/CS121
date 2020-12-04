@@ -4,73 +4,71 @@
 
 int main(void)
 {
-	struct card AceH = {INIT_CARD};
-	struct card AceD = { INIT_CARD };
-	struct card AceC = { INIT_CARD };
-	struct card AceS = { INIT_CARD };
+	struct card AceH = { 0, 0 ,0 };
+	struct card AceD = { 0, 0 ,0 };
+	struct card AceC = { 0, 0 ,0 };
+	struct card AceS = { 0, 0 ,0 };
 
-	struct card TwoH = { INIT_CARD };
-	struct card TwoD = { INIT_CARD };
-	struct card TwoC = { INIT_CARD };
-	struct card TwoS = { INIT_CARD };
+	struct card TwoH = { 0, 0 ,0 };
+	struct card TwoD = { 0, 0 ,0 };
+	struct card TwoC = { 0, 0 ,0 };
+	struct card TwoS = { 0, 0 ,0 };
 
-	struct card ThreeH = { INIT_CARD };
-	struct card ThreeD = { INIT_CARD };
-	struct card ThreeC = { INIT_CARD };
-	struct card ThreeS = { INIT_CARD };
+	struct card ThreeH = { 0, 0 ,0 };
+	struct card ThreeD = { 0, 0 ,0 };
+	struct card ThreeC = { 0, 0 ,0 };
+	struct card ThreeS = { 0, 0 ,0 };
 
-	struct card FourH = { INIT_CARD };
-	struct card FourD = { INIT_CARD };
-	struct card FourC = { INIT_CARD };
-	struct card FourS = { INIT_CARD };
+	struct card FourH = { 0, 0 ,0 };
+	struct card FourD = { 0, 0 ,0 };
+	struct card FourC = { 0, 0 ,0 };
+	struct card FourS = { 0, 0 ,0 };
 
-	struct card FiveH = { INIT_CARD };
-	struct card FiveD = { INIT_CARD };;
-	struct card FiveC = { INIT_CARD };
-	struct card FiveS = { INIT_CARD };
+	struct card FiveH = { 0, 0 ,0 };
+	struct card FiveD = { 0, 0 ,0 };
+	struct card FiveC = { 0, 0 ,0 };
+	struct card FiveS = { 0, 0 ,0 };
 
 
-	struct card SixH = { INIT_CARD };
-	struct card SixD = { INIT_CARD };
-	struct card SixC = { INIT_CARD };
-	struct card SixS = { INIT_CARD };
+	struct card SixH = { 0, 0 ,0 };
+	struct card SixD = { 0, 0 ,0 };
+	struct card SixC = { 0, 0 ,0 };
+	struct card SixS = { 0, 0 ,0 };
 
-	struct card SevenH = { INIT_CARD };
-	struct card SevenD = { INIT_CARD };
-	struct card SevenC = { INIT_CARD };
-	struct card SevenS = { INIT_CARD };
+	struct card SevenH = { 0, 0 ,0 };
+	struct card SevenD = { 0, 0 ,0 };
+	struct card SevenC = { 0, 0 ,0 };
+	struct card SevenS = { 0, 0 ,0 };
 
-	struct card EightH = { INIT_CARD };
-	struct card EightD = { INIT_CARD };
-	struct card EightC = { INIT_CARD };
-	struct card EightS = { INIT_CARD };
+	struct card EightH = { 0, 0 ,0 };
+	struct card EightD = { 0, 0 ,0 };
+	struct card EightC = { 0, 0 ,0 };
+	struct card EightS = { 0, 0 ,0 };
 
-	struct card NineH = { INIT_CARD };
-	struct card NineD = { INIT_CARD };
-	struct card NineC = { INIT_CARD };
-	struct card NineS = { INIT_CARD };
+	struct card NineH = { 0, 0 ,0 };
+	struct card NineD = { 0, 0 ,0 };
+	struct card NineC = { 0, 0 ,0 };
+	struct card NineS = { 0, 0 ,0 };
 
-	struct card TenH = { INIT_CARD };
-	struct card TenD = { INIT_CARD };
-	struct card TenC = { INIT_CARD };
-	struct card TenS = { INIT_CARD };
+	struct card TenH = { 0, 0 ,0 };
+	struct card TenD = { 0, 0 ,0 };
+	struct card TenC = { 0, 0 ,0 };
+	struct card TenS = { 0, 0 ,0 };
 
-	struct card JackH = { INIT_CARD };
-	struct card JackD = { INIT_CARD };
-	struct card JackC = { INIT_CARD };
-	struct card JackS = { INIT_CARD };
+	struct card JackH = { 0, 0 ,0 };
+	struct card JackD = { 0, 0 ,0 };
+	struct card JackC = { 0, 0 ,0 };
+	struct card JackS = { 0, 0 ,0 };
 
-	struct card QueenH = { INIT_CARD };
-	struct card QueenD = { INIT_CARD };
-	struct card QueenC = { INIT_CARD };
-	struct card QueenS = { INIT_CARD };
+	struct card QueenH = { 0, 0 ,0 };
+	struct card QueenD = { 0, 0 ,0 };
+	struct card QueenC = { 0, 0 ,0 };
+	struct card QueenS = { 0, 0 ,0 };
 
-	struct card KingH = { INIT_CARD };
-	struct card KingD = { INIT_CARD };
-	struct card KingC = { INIT_CARD };
-	struct card KingS = { INIT_CARD };
-
-	struct card dummy = { INIT_CARD };
+	struct card KingH = { 0, 0 ,0 };
+	struct card KingD = { 0, 0 ,0 };
+	struct card KingC = { 0, 0, 0 };
+	struct card KingS = { 0, 0, 0 };
 
 	struct card cards[52] = {AceH, AceD, AceC, AceS, TwoH, TwoD, TwoC, TwoS, ThreeH, ThreeD, ThreeC, ThreeS, FourH, FourD, FourC, FourS, FiveH, FiveD, FiveC, FiveS, SixH, SixD, SixC, SixS, SevenH, SevenD, SevenC, SevenS, EightH, EightD, EightC, EightS, NineH, NineD, NineC, NineS, TenH, TenD, TenC, TenS, JackH, JackD, JackC, JackS, QueenH, QueenD, QueenC, QueenS, KingH, KingD, KingC, KingS};
 
@@ -84,15 +82,15 @@ int main(void)
 	const char* face[13] = { "Ace", "Deuce", "Three", "Four", "Five", "Six", "Seven", "Eight",
 		"Nine", "Ten", "Jack", "Queen", "King" };
 
-	int deckpos = 0;
+
 	/* initalize deck array */
-	struct card deck[52] = { dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy,dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy,dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy,dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy,dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy };
-	struct card hand1[5] = { dummy, dummy, dummy, dummy, dummy };
-	struct card hand2[5] = { dummy, dummy, dummy, dummy, dummy };
-	init_cards(cards, face, suit);
-	print_cards(cards);
-	shuffle(deck, cards);
-	deal(deck, hand1, dummy, deckpos);
+	int deck[4][13] = { 0 };
+
+	//shuffle(deck);
+	//deal(deck, face, suit);
+
+	init_cards(cards);
+	print_cards(cards, face, suit);
 
 	return 0;
 }
