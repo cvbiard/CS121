@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	struct card AceH = { 0, 0 ,0 };
+	struct card AceH = { INIT_CARD };
 	struct card AceD = { 0, 0 ,0 };
 	struct card AceC = { 0, 0 ,0 };
 	struct card AceS = { 0, 0 ,0 };

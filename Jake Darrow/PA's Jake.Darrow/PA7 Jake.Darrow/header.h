@@ -1,5 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
+#define INIT_CARD  0, 0 ,-1, "string", "string"
+
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -33,3 +35,4 @@ void decide_turns(struct player player1, struct player cpu);
 void player_choose_bet_move(struct player player1);
 void disperse_pot(struct player player1, struct player cpu, double pot);
 void frequencyc(int dice1[2][5], int frequency_table[6]);
+void determiner(struct card hand[5], int combos[10]);
