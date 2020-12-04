@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+
 struct card
 {
 	int face;
@@ -19,6 +21,7 @@ struct hand
 };
 
 void shuffle(struct card wDeck[52], struct card cards[52]);
-void deal(struct card wDeck[52], struct card hand[5], struct card dummy, int deckpos);
+int deal(struct card wDeck[52], struct card hand[5], struct card dummy, int deckpos);
 void init_cards(struct card cars[52], const char* wFace[], const char* wSuit[]);
 void print_cards(struct card cards[52]);
+void determiner(struct card hand[5]);
