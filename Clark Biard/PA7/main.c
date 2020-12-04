@@ -2,6 +2,8 @@
 
 #include "header.h"
 
+
+
 int main(void)
 {
 	struct card AceH = {INIT_CARD};
@@ -92,7 +94,10 @@ int main(void)
 	init_cards(cards, face, suit);
 	print_cards(cards);
 	shuffle(deck, cards);
-	deal(deck, hand1, dummy, deckpos);
-
+	deckpos = deal(deck, hand1, dummy, deckpos);
+	printf("Deckpos is %d\n", deckpos);
+	deckpos = deal(deck, hand2, dummy, deckpos);
+	printf("Deckpos is %d\n", deckpos);
+	determiner(hand1);
 	return 0;
 }
