@@ -6,7 +6,7 @@
 
 int main(void)
 {
-	struct card AceH = {INIT_CARD};
+	struct card AceH = { INIT_CARD };
 	struct card AceD = { INIT_CARD };
 	struct card AceC = { INIT_CARD };
 	struct card AceS = { INIT_CARD };
@@ -91,6 +91,9 @@ int main(void)
 	struct card deck[52] = { dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy,dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy,dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy,dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy,dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy, dummy };
 	struct card hand1[5] = { dummy, dummy, dummy, dummy, dummy };
 	struct card hand2[5] = { dummy, dummy, dummy, dummy, dummy };
+
+	int combos1[10] = { 0,0,0,0,0,0,0,0,0,0 };
+	int combos2[10] = { 0,0,0,0,0,0,0,0,0,0 };
 	init_cards(cards, face, suit);
 	print_cards(cards);
 	shuffle(deck, cards);
@@ -98,6 +101,7 @@ int main(void)
 	printf("Deckpos is %d\n", deckpos);
 	deckpos = deal(deck, hand2, dummy, deckpos);
 	printf("Deckpos is %d\n", deckpos);
-	determiner(hand1);
+	determiner(hand1, combos1);
+	determiner(hand2, combos2);
 	return 0;
 }

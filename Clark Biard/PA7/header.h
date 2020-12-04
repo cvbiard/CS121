@@ -24,4 +24,4 @@ void shuffle(struct card wDeck[52], struct card cards[52]);
 int deal(struct card wDeck[52], struct card hand[5], struct card dummy, int deckpos);
 void init_cards(struct card cars[52], const char* wFace[], const char* wSuit[]);
 void print_cards(struct card cards[52]);
-void determiner(struct card hand[5]);
+void determiner(struct card hand[5], int combos[10]);
