@@ -97,11 +97,17 @@ int main(void)
 	init_cards(cards, face, suit);
 	print_cards(cards);
 	shuffle(deck, cards);
-	deckpos = deal(deck, hand1, dummy, deckpos);
-	printf("Deckpos is %d\n", deckpos);
+	//deckpos = deal(deck, hand1, dummy, deckpos);
+	//printf("Deckpos is %d\n", deckpos);
 	deckpos = deal(deck, hand2, dummy, deckpos);
-	printf("Deckpos is %d\n", deckpos);
-	determiner(hand1, combos1);
+	//printf("Deckpos is %d\n", deckpos);
+	//print_cards(cards);
 	determiner(hand2, combos2);
+	ai_eval(hand2, combos2);
+	deckpos = deal(deck, hand2, dummy, deckpos);
+	determiner(hand2, combos2);
+	//get_replace(hand1);
+	//deckpos = deal(deck, hand1, dummy, deckpos);
+	//determiner(hand1, combos1);
 	return 0;
 }
