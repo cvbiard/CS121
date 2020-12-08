@@ -28,10 +28,11 @@ int deal(struct card wDeck[52], struct card hand[5], struct card dummy, int deck
 	/* deal each of the 52 cards */
 	for (card = deckpos; card < deckpos+5; card++)
 	{
-		if (wDeck[card].id >= 0)
+		if (wDeck[card].id >= 0 && hand[card - deckpos].replace == 0)
 		{	
+			printf("throwing away card %s of %s for a %s of %s\n", hand[card - deckpos].faces, hand[card - deckpos].suits, wDeck[card].faces, wDeck[card].suits);
 			hand[card - deckpos] = wDeck[card];
-			printf("Card in hand at positiond %d has id %d\n", (card - deckpos), wDeck[card].id);
+			printf("Card in hand at positiond %d has id %d and is a %s of %s\n", (card - deckpos), wDeck[card].id, wDeck[card].faces, wDeck[card].suits);
 			wDeck[card] = dummy;
 		}
 	}
@@ -77,15 +78,30 @@ void determiner(struct card hand[5], int combos[10])
 	int frequency_table[13] = {0,0,0,0,0,0,0,0,0,0,0,0,0};
 	int frequency_table2[4] = {0,0,0,0};
 	int index = 0, pairs = 0, toak = 0, straight = 0, rf = 0;
+	
 	for (int i = 0; i < 5; i++)
 	{
-		index = hand[i].face;
+		if (hand[i].face < 0)
+		{
+			index = 0;
+		}
+		else
+		{
+			index = hand[i].face;
+		}
 		frequency_table[index]= frequency_table[index]+1;
 	}
 	for (int i = 0; i < 5; i++)
 	{
-		index = hand[i].suit;
-		frequency_table2[index]= frequency_table2[index]+1;
+		if (hand[i].suit < 0)
+		{
+			index = 0;
+		}
+		else
+		{
+			index = hand[i].suit;
+		}
+		frequency_table2[index] = frequency_table2[index]+1;
 	}
 	printf("Ones %d\n", frequency_table[0]);
 	printf("Twos %d\n", frequency_table[1]);
@@ -147,6 +163,7 @@ void determiner(struct card hand[5], int combos[10])
 		if (frequency_table[i] != 0)
 		{
 			printf("Your high card is at position %d\n", i);
+			combos[0] = 1;
 			break;
 		}
 	}
@@ -205,5 +222,208 @@ void determiner(struct card hand[5], int combos[10])
 		}
 		printf("A straight is possible\n");
 		combos[4] = 1;
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		printf("combo at %d is %d\n", i, combos[i]);
+	}
+}
+void get_replace(struct card hand[5])
+{
+	char vars[5] = { 'n', 'n', 'n', 'n', 'n' };
+	for (int i = 0; i < 5; i++)
+	{
+		printf("Would you like to replace card %d in your hand? Enter 'y' for yes or 'n' for no.\n", i + 1);
+		scanf("%c%*c", &vars[i]);
+		if (vars[i] == 'y')
+		{
+			hand[i].replace = 0;
+		}
+		else
+		{
+			hand[i].replace = 1;
+		}
+	}
+}
+int ai_eval(struct card hand[5], int combos[10])
+{
+	int frequency_table[13] = { 0,0,0,0,0,0,0,0,0,0,0,0,0 };
+	int index = 0;
+	/*for (int i = 0; i < 10; i++)
+	{
+		printf("combo at %d is %d\n", i, combos[i]);
+	}*/
+	if (combos[0] > 0)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			hand[i].replace = 0;
+		}
+		hand[4].replace = 1;
+	}
+	if (combos[1] > 0)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			if (hand[i].face < 0)
+			{
+				index = 0;
+			}
+			else
+			{
+				index = hand[i].face;
+			}
+			frequency_table[index] = frequency_table[index] + 1;
+		}
+		for (int i = 0; i < 13; i++)
+		{
+			if (frequency_table[i] == 2)
+			{
+				for (int j = 0; j < 5; j++)
+				{
+					if (hand[j].face != i)
+					{
+						hand[j].replace = 0;
+					}
+					else
+					{
+						hand[j].replace = 1;
+					}
+				}
+			}
+		}
+	}
+	if (combos[2] > 0)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			if (hand[i].face < 0)
+			{
+				index = 0;
+			}
+			else
+			{
+				index = hand[i].face;
+			}
+			frequency_table[index] = frequency_table[index] + 1;
+		}
+		for (int i = 0; i < 13; i++)
+		{
+			if (frequency_table[i] == 2)
+			{
+				for (int j = 0; j < 5; j++)
+				{
+					if (hand[j].face != i)
+					{
+						hand[j].replace = 0;
+					}
+				}
+			}
+		}
+	}
+	if (combos[3] > 0)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			if (hand[i].face < 0)
+			{
+				index = 0;
+			}
+			else
+			{
+				index = hand[i].face;
+			}
+			frequency_table[index] = frequency_table[index] + 1;
+		}
+		for (int i = 0; i < 13; i++)
+		{
+			if (frequency_table[i] == 3)
+			{
+				for (int j = 0; j < 5; j++)
+				{
+					if (hand[j].face != i)
+					{
+						hand[j].replace = 0;
+					}
+					else
+					{
+						hand[j].replace = 1;
+					}
+				}
+			}
+		}
+	}
+	if (combos[7] > 0)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			if (hand[i].face < 0)
+			{
+				index = 0;
+			}
+			else
+			{
+				index = hand[i].face;
+			}
+			frequency_table[index] = frequency_table[index] + 1;
+		}
+		for (int i = 0; i < 13; i++)
+		{
+			if (frequency_table[i] == 4)
+			{
+				for (int j = 0; j < 5; j++)
+				{
+					if (hand[j].face != i)
+					{
+						hand[j].replace = 0;
+					}
+					else
+					{
+						hand[j].replace = 1;
+					}
+				}
+			}
+		}
+	}
+	if (combos[4] > 0 || combos[5] > 0 || combos[6] > 0 || combos[8] > 0 || combos[9] > 0)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			hand[i].replace = 1;
+		}
+		return 0;
+	}
+}
+void winner_check(struct card hand1[5], struct card hand2[5], int combos1[10], int combos2[10])
+{
+	int comb1 = 0, comb2 = 0;
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (combos1[i] > 0)
+		{
+			comb1 = i;
+		}
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		if (combos2[i] > 0)
+		{
+			comb2 = i;
+		}
+	}
+
+	if (comb1 > comb2)
+	{
+		//player 1 wins
+	}
+	else if (comb1 < comb2)
+	{
+		//player 2 wins
+	}
+
+	if (comb1 == comb2)
+	{
+
 	}
 }
