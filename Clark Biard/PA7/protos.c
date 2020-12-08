@@ -31,7 +31,7 @@ int deal(struct card wDeck[52], struct card hand[5], struct card dummy, int deck
 		if (wDeck[card].id >= 0)
 		{	
 			hand[card - deckpos] = wDeck[card];
-			//printf("Card in hand at positiond %d has id %d, and is a %s of %s\n", card - deckpos, wDeck[card].id, wDeck[card].faces, wDeck[card].suits);
+			printf("Card in hand at positiond %d has id %d\n", (card - deckpos), wDeck[card].id);
 			wDeck[card] = dummy;
 		}
 	}
@@ -71,21 +71,21 @@ void print_cards(struct card cards[52])
 		printf("I is %d\nCard of face %s, (%d) and and suit of %s (%d) has an ID of %d.\n", i, cards[i].faces, cards[i].face, cards[i].suits, cards[i].suit, cards[i].id);
 	}
 }
-void determiner(struct card hand[5])
+void determiner(struct card hand[5], int combos[10])
 {
 
 	int frequency_table[13] = {0,0,0,0,0,0,0,0,0,0,0,0,0};
-	int frequency_table2[4] = { 0,0,0,0};
-	int index = 0, pairs = 0, toak = 0;
-	for (int i = 0; i < 4; i++)
+	int frequency_table2[4] = {0,0,0,0};
+	int index = 0, pairs = 0, toak = 0, straight = 0, rf = 0;
+	for (int i = 0; i < 5; i++)
 	{
 		index = hand[i].face;
-		frequency_table[index]++;
+		frequency_table[index]= frequency_table[index]+1;
 	}
 	for (int i = 0; i < 5; i++)
 	{
 		index = hand[i].suit;
-		frequency_table2[index]++;
+		frequency_table2[index]= frequency_table2[index]+1;
 	}
 	printf("Ones %d\n", frequency_table[0]);
 	printf("Twos %d\n", frequency_table[1]);
@@ -110,32 +110,100 @@ void determiner(struct card hand[5])
 		if (frequency_table[i] == 2)
 		{
 			printf("A pair is possible\n");
+			combos[1] = 1;
+			
 			pairs = pairs + 1;
 		}
 		if (frequency_table[i] == 3)
 		{
+			combos[3] = 1;
 			printf("A three of a kind is possible\n");
 			toak = toak + 1;
 		}
 		if (frequency_table[i] == 4)
 		{
 			printf("A four of a kind is possible\n");
+			combos[7] = 1;
 		}
 		if (pairs >= 2)
 		{
 			printf("Two pairs is possible\n");
+			combos[2] = 1;
 		}
 		if (pairs > 0 && toak > 0)
 		{
 			printf("A full house is possible\n");
+			combos[6] = 1;
 		}
 	}
 	for (int i = 12; i >= 0; i--)
 	{
+		if (frequency_table[0] != 0)
+		{
+			printf("Your high card is at position %d\n", 0);
+			combos[0] = 1;
+			break;
+		}
 		if (frequency_table[i] != 0)
 		{
 			printf("Your high card is at position %d\n", i);
 			break;
 		}
+	}
+	for (int i = 0; i < 13; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			if (frequency_table[i + j] == 1)
+			{
+				straight = straight + 1;
+			}
+		}
+		if (straight == 5)
+		{
+			for (int k = 0; k < 4; k++)
+			{
+				if (frequency_table2[k] == 4)
+				{
+					printf("A straight flush is possible\n");
+					combos[8] = 1;
+				}
+			}
+			printf("A straight is possible\n");
+			combos[4] = 1;
+		}
+		straight = 0;
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (frequency_table2[i] == 4)
+		{
+			printf("A flush is possible\n");
+			combos[5] = 1;
+		}
+	}
+	for (int i = 9; i < 13; i++)
+	{
+		if (frequency_table[i] == 1)
+		{
+			rf = rf + 1;
+		}
+	}
+	if (frequency_table[0] == 1)
+	{
+		rf = rf + 1;
+	}
+	if (rf == 5)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			if (frequency_table2[i] == 4)
+			{
+				printf("You got a royal flush\n");
+				combos[9] = 1;
+			}
+		}
+		printf("A straight is possible\n");
+		combos[4] = 1;
 	}
 }
