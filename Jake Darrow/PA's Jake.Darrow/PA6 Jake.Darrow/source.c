@@ -66,8 +66,9 @@ int game_menu()
 	}
 }
 
-int pick_turns(int decision[])
+int pick_turns()
 {
+	int decision[1];
 	printf("Press enter to see who gets to go first\n");
 	system("PAUSE");
 	system("CLS");
@@ -78,71 +79,104 @@ int pick_turns(int decision[])
 
 }
 
-int set_ships(int decision[], char board[10][10], int xcoor, int ycoor, char orientation)
+int set_ships()
 {
-	int xcoor = 0, ycoor = 0;
-
+	char orientation = '\0';
 	printf("Player 1, you will now set the position of your ships starting with your carrier\n\nWould you like to set carrier vertically or horizontally?\n\nPlease enter v for vertically or h for horizontally\n");
 	scanf(" %c", &orientation);
-
+	
 	while (orientation != 'v' && orientation != 'h')
 	{
-			printf("Please only enter lowercase character 'v' or 'h' to indicate the orientation you'd like to set your Carrier\n");
-			scanf(" %c", &orientation);
+		printf("Please only enter lowercase character 'v' or 'h' to indicate the orientation you'd like to set your Carrier\n");
+		scanf(" %c", &orientation);
 	}
-
 	if (orientation == 'v') //Vertical
 	{
-		printf("Please enter the x y coordinate you'd like to place the top of your cruiser\n");
-		scanf("%d%d", &xcoor, &ycoor);
-		while (ycoor < 0 || ycoor > 6)
-		{
-			printf("You cannot place your carrier at %d %d because part or all of the ship will be off the board\nPlease enter a valid x y coordinate\n", xcoor, ycoor);
-			scanf("%d%d", &xcoor, &ycoor);
-		}
+
 	}
 	if (orientation == 'h') //Horizontal
 	{
 
 	}
+	
 }
 
-int ship_check(char board[10][10], int xcoor, int ycoor, char orientation, int ship)
+int ship_check(char board[10][10], int x, int y, char r, int ship)
 {
-	char point = board[xcoor][ycoor];
-
-	if (orientation == 'h')
+	if (r == 'h')
 	{
-		for (int i = xcoor; i < ship + xcoor; i++)
+		for (int i = x; i < ship + x; i++)
 		{
-			if (board[i][ycoor] != '~')
+			if (board[i][y] != '~')
 			{
-				printf("Something is aleady placed there ):\n");
-				return 0;
-			}
-		}
-	}
-	else if (orientation == 'v')
-	{
-		for (int i = ycoor; i < ship + ycoor; i++)
-		{
-			if (board[xcoor][i] != '~')
-			{
-				printf("Something is aleady placed there ):\n");
+				printf("You cannot place ship size %d at coordinate %d %d because that coordinate is occupied by a %c\n", ship, x, y, y, i, board[i][y]);
 				return 0;
 			}
 		}
 	}
 
-	printf("Ship of size %d can be placed at %d %d\n", ycoor, xcoor);
+	else if (r == 'v')
+	{
+		for (int i = y; i < ship + y; i++)
+		{
+			if (board[x][i] != '~')
+			{
+				printf("You cannot place ship size % d at coordinate % d % d because that coordinate is occupied by a % c\n", ship, x, y, y, i, board[i][y]);
+				return 0;
+			}
+		}
+	}
+	printf("Your ship of size %d can be placed at coordinate %d %d", ship, x, y);
 	return 1;
 }
 
-int player_ships(char board[10][10])
+void player_ships(char board[10][10], struct ship ships[5]) // incomplete, wanna talk with clark about reworking
 {
-	int x = 0, y = 0, check = 0, check3 = 0;
-	char orientation = '\0';
-	for (int i = 2; i < 5; i++)
+	int x = 0, y = 0, check = 0, check3 = 0, shipi = 0;
+	char r = '\0';
+	
+	for (int i = 2; i < 6; i++)
+	{
+		while (check == 0)
+		{
+			switch (i)
+			{
+				case 3;
+					while (check == 0)
+					{
+						printf("State whether you'd like to place your ship vertically ('v') or horizontally ('h') then enter the left most coordinate of your")
+					}
+			}
+		}
+	}
+}
+
+void ship_placer(char board[10][10], int x, int y, char r, int ship, int shipi, struct ship ships[5])
+{
+	if (r == 'h')
+	{
+		for (int i = x; i < ship + x; i++)
+		{
+			board[y][i] = ships[shipi].letter;
+		}
+	}
+	
+	else if (r == 'v')
+	{
+		for (int i = y; i < ship + y; i++)
+		{
+			board[i][x] = ships[shipi].letter;
+		}
+	}
+	print_board(board, 0);
+}
+
+void bot_ships(char board[10][10], struct ship ships[5])
+{
+	int x = 0, y = 0, check = 0, check3 = 0, shipi = 0, rot = 0;
+	char r = '\0';
+
+	for (int i = 2; i < 6; i++)
 	{
 		while (check == 0)
 		{
@@ -151,13 +185,59 @@ int player_ships(char board[10][10])
 				case 3;
 					while (check3 == 0)
 					{
-						printf("Please enter the x y coordinate you'd like to place the left-most portion of your %d long ship\nPlease also enter the orientation of your ship either v for vertical or h for horizontal\n", i);
-						scanf("%d%*c%d%*c%c%*c")
+						x = (rand() % 9);
+						y = (rand() % 9);
+						rot = (rand() % 2);
+
+						if (rot == 0)
+						{
+							r = 'h';
+						}
+						else
+						{
+							r = 'v';
+						}
+						check3 = ship_check(board, x, y, r, i);
+						ship_placer(board, x, y, r, i, shipi, ships);
+						shipi++;
+						printf("shipi is %d\n", shipi);
 					}
-					printf("Please enter the x y coordinate you'd like to place the left-most portion of your %d long ship\nPlease also enter the orientation of your ship either v for vertical or h for horizontal\n", i);
-					scanf("")
+					x = (rand() % 9);
+					y = (rand() % 9);
+					rot = (rand() % 2);
+
+					if (rot == 0)
+					{
+						r = 'h';
+					}
+					else
+					{
+						r = 'v';
+					}
+					check = ship_check(board, x, y, r, i);
+					break;
+
+				default:
+					x = (rand() % 9);
+					y = (rand() % 9);
+					rot = (rand() % 2);
+
+					if (rot == 0)
+					{
+						r = 'h';
+					}
+					else
+					{
+						r = 'v';
+					}
+					check = ship_check(board, x, y, r, i);
+					break;
 			}
-				
 		}
+		
+		ship_placer(board, x, y, r, i, shipi, ships);
+		shipi++;
+		printf("shipi is %d\n", shipi);
+		check = 0;
 	}
 }

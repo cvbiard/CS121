@@ -1,4 +1,2 @@
 C:\Users\Owner\Desktop\CS121\PA4 Jake.Darrow\Debug\PA4 Jake.Darrow.exe
 C:\Users\Owner\Desktop\CS121\PA4 Jake.Darrow\Debug\PA4 Jake.Darrow.pdb
-C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA4 Jake.Darrow\Debug\PA4 Jake.Darrow.exe
-C:\Users\Owner\Desktop\Github\CS121\Jake Darrow\PA's Jake.Darrow\PA4 Jake.Darrow\Debug\PA4 Jake.Darrow.pdb
