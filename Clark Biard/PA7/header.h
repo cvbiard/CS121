@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 
 
@@ -25,7 +26,10 @@ void shuffle(struct card wDeck[52], struct card cards[52]);
 int deal(struct card wDeck[52], struct card hand[5], struct card dummy, int deckpos);
 void init_cards(struct card cars[52], const char* wFace[], const char* wSuit[]);
 void print_cards(struct card cards[52]);
-void determiner(struct card hand[5], int combos[10]);
+void determiner(struct card hand[5], int combos[10], int who);
 void get_replace(struct card hand[5]);
-int ai_eval(struct card hand[5], int combos[10]);
-void winner_check(struct card hand1[5], struct card hand2[5], int combos1[10], int combos2[10]);
+void eval(struct card hand[5], int combos[10], struct card highest[1]);
+int winner_check(struct card hand1[5], struct card hand2[5], int combos1[10], int combos2[10], struct card highest1[1], struct card highest2[1]);
+void print_hand(struct card hand[5]);
+int move(int bank,  int pot[1], int prevbet, int fold[1]);
+int ai_bet(int bank, int pot[1], int combos[10], int fold[1], int fold2[1]);
