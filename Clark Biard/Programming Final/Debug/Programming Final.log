@@ -1,0 +1,5 @@
+﻿  main.c
+  protos.c
+  Generating Code...
+C:\Users\Clark\Desktop\CS121\Clark Biard\Programming Final\protos.c(102): warning C4716: 'sort_customers': must return a value
+  Programming Final.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\Programming Final\Debug\Programming Final.exe
