@@ -31,5 +31,8 @@
     <Text Include="customers.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="charges.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

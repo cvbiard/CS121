@@ -6,14 +6,18 @@ int main()
 	Profile customers[100];
 	Profile dummies[100];
 
-	Profile dummy = { "dummy", 'A', 0, 0, 0.0, 0, 1 };
+	Profile dummy = { "dummy", 'A', 0, 0, 0.0, 0, 1, 0.0 };
 	
 	init_arr(dummy, customers);
 	init_arr(dummy, dummies);
 	read_customers(infile, customers);
 	sort_customers(customers, dummies);
 	print_customers(customers);
+	calculate_charges(customers);
+	print_customers(customers);
+	calculate_stats(customers, outfile);
 
-
+	fclose(infile);
+	fclose(outfile);
 	return 0;
 }
