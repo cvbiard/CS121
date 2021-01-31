@@ -12,7 +12,6 @@ int main()
 	init_arr(dummy, dummies);
 	read_customers(infile, customers);
 	sort_customers(customers, dummies);
-	print_customers(customers);
 	calculate_charges(customers);
 	print_customers(customers);
 	calculate_stats(customers, outfile);

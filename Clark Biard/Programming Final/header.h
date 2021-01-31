@@ -1,3 +1,6 @@
+#ifndef HEADER_H
+#define HEADER_H
+
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
@@ -23,3 +26,5 @@ int read_customers(FILE* infile, Profile customers[100]);
 int sort_customers(Profile customers[100], Profile dummies[100]);
 int calculate_charges(Profile customers[100]);
 int calculate_stats(Profile customers[100], FILE* outfile);
+
+#endif
