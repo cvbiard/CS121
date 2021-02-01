@@ -1,0 +1,3 @@
+﻿  protos.c
+C:\Users\Clark\Desktop\RPG\protos.c(117): warning C4715: 'col_check': not all control paths return a value
+  RPG.vcxproj -> C:\Users\Clark\Desktop\RPG\Debug\RPG.exe
