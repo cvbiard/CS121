@@ -146,9 +146,13 @@
     <ClInclude Include="header.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="PlayerTile.txt" />
     <Text Include="settings.txt" />
+    <Text Include="TestTile.txt" />
+    <Text Include="TestTile2.txt" />
     <Text Include="TestZoneF.txt" />
     <Text Include="TestZoneV.txt" />
+    <Text Include="TileTestZone.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

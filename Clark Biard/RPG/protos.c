@@ -20,51 +20,64 @@ void load_settings(FILE* settings)
 	}
 }
 
-void init_screen(char array[width][height])
+void init_screen(char array[60][30])
 {
-	for (int i = 0; i < height; i++)
+	for (int i = 0; i < height*3; i++)
 	{
-		for (int j = 0; j < width; j++)
+		for (int j = 0; j < width*6; j++)
 		{
 			array[j][i] = '-';
 		}
 	}
 }
-void print_screen(char array[width][height], int pos[2])
+void print_screen(char array[60][30], int pos[2], struct tile tiles[3], int tile_ids[width][height])
 {
-	char current = '\0';
-	array[pos[1]][pos[0]] = 'o';
-	for (int j = 0; j < width; j++)
+
+	for (int i = 0; i < height * 3; i = i + 3)
+	{
+		for (int j = 0; j < width * 6; j = j + 6)
+		{
+			for (int k = 0; k < 6; k++)
+			{
+				for (int l = 0; l < 3; l++)
+				{
+					array[k + j][i + l] = tiles[tile_ids[j / 6][i / 3]].layout[k][l];
+				}
+			}
+		}
+	}
+	printf(" ");
+	for (int i = 0; i < width*6; i++)
 	{
 		printf("#");
 	}
-	printf("##\n");
-
-	for (int i = 0; i < height; i++)
+	printf("\n");
+	for (int i = 0; i < height*3; i++)
 	{
 		printf("#");
-		for (int j = 0; j < width; j++)
+		for (int j = 0; j < width*6; j++)
 		{
-			current = array[j][i];
-			if (current == 'x')
+			if (array[j][i] == 'x')
 			{
 				printf(" ");
 			}
 			else
 			{
-				printf("%c", current);
+				printf("%c", array[j][i]);
 			}
+
 		}
 		printf("#");
 		printf("\n");
 	}
-	for (int j = 0; j < width; j++)
+	printf(" ");
+	for (int i = 0; i < width * 6; i++)
 	{
 		printf("#");
 	}
-	printf("##\n");
+	printf("\n");
 }
-int col_check(char array[width][height], char functional[width][height], int pos[2], char input)
+int col_check(char array[60][30], char functional[width][height], int pos[2], char input)
 {
 	if (input == 'w')
 	{
@@ -114,8 +127,9 @@ int col_check(char array[width][height], char functional[width][height], int pos
 			return 0;
 		}
 	}
+	return 0;
 }
-void update_location(char array[width][height], char ref[width][height], char functional[width][height], int pos[2], char input)
+void update_location(int array[width][height], int ref[width][height], int pos[2], char input)
 {
 	array[pos[1]][pos[0]] = ref[pos[1]][pos[0]];
 	if (input == 'w')
@@ -123,7 +137,7 @@ void update_location(char array[width][height], char ref[width][height], char fu
 		if (pos[0] - 1 >= 0 && pos[0] - 1 <= height - 1)
 		{
 			
-		pos[0] = pos[0] - col_check(array, functional, pos, input);
+		pos[0] = pos[0] - 1;
 			
 		}
 	}
@@ -132,7 +146,7 @@ void update_location(char array[width][height], char ref[width][height], char fu
 		if (pos[0] + 1 >= 0 && pos[0] + 1 <= height - 1)
 		{
 			
-		pos[0] = pos[0] + col_check(array, functional, pos, input);
+		pos[0] = pos[0] + 1;
 			
 		}
 	}
@@ -141,7 +155,7 @@ void update_location(char array[width][height], char ref[width][height], char fu
 		if (pos[1] - 1 >= 0 && pos[1] - 1 <= width - 1)
 		{
 			
-		pos[1] = pos[1] - col_check(array, functional, pos, input);
+		pos[1] = pos[1] - 1;
 			
 		}
 	}
@@ -150,51 +164,60 @@ void update_location(char array[width][height], char ref[width][height], char fu
 		if (pos[1] + 1 >= 0 && pos[1] + 1 <= width - 1)
 		{
 			
-		pos[1] = pos[1] + col_check(array, functional, pos, input);
+		pos[1] = pos[1] + 1;
 			
 		}
 	}
 	
 	
-	array[pos[1]][pos[0]] = 'o';
+	array[pos[1]][pos[0]] = 0;
 }
-void load_scene(struct asset scene, char array[width][height], char ref[width][height], char functional[width][height])
+void load_scene(struct asset scene, char array[60][30], int tile_ids[width][height], int ref[width][height], struct tile tiles[2])
 {
-	if (scene.visual_asset == NULL)
-	{
-		printf("File not opened");
-	}
-	if (scene.functional_asset == NULL)
-	{
-		printf("File not opened");
-	}
 	for (int i = 0; i < height; i++)
 	{
 		for (int j = 0; j < width; j++)
 		{
-			fscanf(scene.visual_asset, "%c", &array[j][i]);
+			fscanf(scene.visual_asset, "%d", &tile_ids[j][i]);
+			ref[j][i] = tile_ids[j][i];
 		}
-		fscanf(scene.visual_asset, "%*c");
 	}
 	rewind(scene.visual_asset);
+	//print_tile_ids(tile_ids);
 
-	for (int i = 0; i < height; i++)
+	/*for (int i = 0; i < height * 3; i = i + 3)
 	{
-		for (int j = 0; j < width; j++)
+		for (int j = 0; j < width * 6; j = j + 6)
 		{
-			fscanf(scene.visual_asset, "%c", &ref[j][i]);
+			for (int k = 0; k < 6; k++)
+			{
+				for (int l = 0; l < 3; l++)
+				{
+					array[k + j][i + l] = tiles[tile_ids[j/6][i/3]].layout[k][l];
+				}
+			}
 		}
-		fscanf(scene.visual_asset, "%*c");
-	}
+	}*/
 
-	for (int i = 0; i < height; i++)
-	{
-		for (int j = 0; j < width; j++)
-		{
-			fscanf(scene.functional_asset, "%c", &functional[j][i]);
-		}
-		fscanf(scene.functional_asset, "%*c");
-	}
+	//for (int i = 0; i < height; i++)
+	//{
+	//	for (int j = 0; j < width; j++)
+	//	{
+	//		fscanf(scene.visual_asset, "%d", &ref[j][i]);
+	//	}
+	//	fscanf(scene.visual_asset, "%*c");
+	//}
+	//rewind(scene.visual_asset);
+
+	//for (int i = 0; i < height; i++)
+	//{
+	//	for (int j = 0; j < width; j++)
+	//	{
+	//		fscanf(scene.functional_asset, "%d", &functional[j][i]);
+	//	}
+	//	fscanf(scene.functional_asset, "%*c");
+	//}
+	//rewind(scene.functional_asset);
 }
 void print_menu(char text[])
 {
@@ -236,9 +259,9 @@ void print_menu(char text[])
 	}*/
 	int textdone = 0, textcounter = 0;
 	printf(" ");
-	for (int i = 0; i < width; i++)
+	for (int i = 0; i < width*6; i++)
 	{
-		if (i == 0 || i == width - 1)
+		if (i == 0 || i == width*6 - 1)
 		{
 			printf(" ");
 		}
@@ -249,12 +272,12 @@ void print_menu(char text[])
 	}
 	printf("\n");
 
-	for (int l = 0; l < height / 3; l++)
+	for (int l = 0; l < height*3 / 3; l++)
 	{
 		printf(" ");
-		for (int j = 0; j <= width - 1; j++)
+		for (int j = 0; j <= width*6 - 1; j++)
 		{
-			if (j == 0 || j == width - 1)
+			if (j == 0 || j == width*6 - 1)
 			{
 				printf("|");
 			}
@@ -283,9 +306,9 @@ void print_menu(char text[])
 	}
 
 	printf(" ");
-	for (int i = 0; i < width; i++)
+	for (int i = 0; i < width*6; i++)
 	{
-		if (i == 0 || i == width -1)
+		if (i == 0 || i == width*6 -1)
 		{
 			printf("|");
 		}
@@ -295,4 +318,52 @@ void print_menu(char text[])
 		}
 	}
 	printf("\n");
+}
+void load_tile(struct tile tile)
+{
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 6; j++)
+		{
+			fscanf(tile.asset, "%c", &tile.layout[j][i]);
+		}
+		fscanf(tile.asset, "%*c");
+	}
+	rewind(tile.asset);
+}
+void init_tile(struct tile tile)
+{
+	int vind, hind;
+	for (int i = 0; i < 3; i++)
+	{
+		vind = i;
+		for (int i = 0; i < 6; i++)
+		{
+			hind = i;
+			tile.layout[vind][hind] = '~';
+		}
+	}
+
+}
+void print_tile(struct tile tile)
+{
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 6; j++)
+		{
+			printf("%c", tile.layout[j][i]);
+		}
+		printf("\n");
+	}
+}
+void print_tile_ids(int tile_ids[width][height])
+{
+	for (int i = 0; i < height; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			printf("%d", tile_ids[j][i]);
+		}
+		printf("\n");
+	}
 }

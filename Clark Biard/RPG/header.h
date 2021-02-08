@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#define height 15
-#define width 2*height
+#define height 10
+#define width height
 #define debug debug_state
 
 #include <stdio.h>
@@ -19,11 +19,21 @@ struct asset
 	FILE* visual_asset;
 	FILE* functional_asset;
 };
+struct tile
+{
+	int id;
+	char** layout;
+	FILE* asset;
+};
 
 void load_settings(FILE* settings);
-void init_screen(char array[width][height]);
-void print_screen(char array[width][height], int pos[2]);
-int col_check(char array[width][height], char functional[width][height], int pos[2], char input);
-void update_location(char array[width][height], char ref[width][height], char functional[width][height], int pos[2], char input);
-void load_scene(struct asset scene, char array[width][height], char ref[width][height], char functional[width][height]);
+void init_screen(char array[60][30]);
+void print_screen(char array[60][30], int pos[2], struct tile tiles[3], int tile_ids[width][height]);
+int col_check(char array[60][30], char functional[width][height], int pos[2], char input);
+void update_location(int array[width][height], int ref[width][height], int pos[2], char input);
+void load_scene(struct asset scene, char array[60][30], int tile_ids[width][height], int ref[width][height], struct tile tiles[2]);
+void load_tile(struct tile tile);
 void print_menu(char text[]);
+void init_tile(struct tile tile);
+void print_tile(struct tile tile);
+void print_tile_ids(int tile_ids[width][height]);

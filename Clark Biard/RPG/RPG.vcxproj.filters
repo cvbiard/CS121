@@ -37,5 +37,17 @@
     <Text Include="TestZoneF.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="TileTestZone.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="TestTile.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="TestTile2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="PlayerTile.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
