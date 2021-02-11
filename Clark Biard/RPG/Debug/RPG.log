@@ -1,5 +1,6 @@
-﻿  main.c
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(8,34): warning C4101: 'functional': unreferenced local variable
-  protos.c
-  Generating Code...
+﻿  protos.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(164,36): warning C4048: different array subscripts: 'char (*)[30]' and 'int (*)[10]'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(173,36): warning C4048: different array subscripts: 'char (*)[30]' and 'int (*)[10]'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(182,36): warning C4048: different array subscripts: 'char (*)[30]' and 'int (*)[10]'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(191,36): warning C4048: different array subscripts: 'char (*)[30]' and 'int (*)[10]'
   RPG.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\Debug\RPG.exe

@@ -77,59 +77,83 @@ void print_screen(char array[60][30], int pos[2], struct tile tiles[3], int tile
 	}
 	printf("\n");
 }
-int col_check(char array[60][30], char functional[width][height], int pos[2], char input)
+int col_check(char array[60][30], int ref[width][height], int pos[2], char input, struct tile tiles[4])
 {
 	if (input == 'w')
 	{
-		if (functional[pos[1]][pos[0] - 1] != 'c')
+		if (tiles[ref[pos[1]][pos[0] - 1]].flags[0] == 'c')
 		{
-			return 1;
+			return 0;
+		}
+		else if (tiles[ref[pos[1]][pos[0] - 1]].flags[1] == 'd')
+		{
+			printf("\nThis is a door, it leads somewhere, but not right now.\n");
+			system("PAUSE");
+			return 0;
 		}
 		else
 		{
-			return 0;
+			return 1;
 		}
 	}
 	if (input == 's')
 	{
 		
-		if (functional[pos[1]][pos[0] + 1] != 'c')
+		if (tiles[ref[pos[1]][pos[0] + 1]].flags[0] == 'c')
 		{
-				return 1;
+				return 0;
+		}
+		else if(tiles[ref[pos[1]][pos[0] + 1]].flags[1] == 'd')
+		{
+			printf("\nThis is a door, it leads somewhere, but not right now.\n");
+			system("PAUSE");
+			return 0;
 		}
 		else
 		{
-			return 0;
+			return 1;
 		}
 		
 	}
 	if (input == 'a')
 	{
 		
-		if (functional[pos[1] - 1][pos[0]] != 'c')
+		if (tiles[ref[pos[1] - 1][pos[0]]].flags[0] == 'c')
 		{
-				return 1;
+				return 0;
+		}
+		else if (tiles[ref[pos[1] - 1][pos[0]]].flags[1] == 'd')
+		{
+			printf("\nThis is a door, it leads somewhere, but not right now.\n");
+			system("PAUSE");
+			return 0;
 		}
 		else
 		{
-			return 0;
+			return 1;
 		}
 		
 	}
 	if (input == 'd')
 	{
-		if (functional[pos[1] + 1][pos[0]] != 'c')
+		if (tiles[ref[pos[1] + 1][pos[0]]].flags[0] == 'c')
 		{
-				return 1;
+				return 0;
+		}
+		else if (tiles[ref[pos[1] + 1][pos[0]]].flags[1] == 'd')
+		{
+			printf("\nThis is a door, it leads somewhere, but not right now.\n");
+			system("PAUSE");
+			return 0;
 		}
 		else
 		{
-			return 0;
+			return 1;
 		}
 	}
 	return 0;
 }
-void update_location(int array[width][height], int ref[width][height], int pos[2], char input)
+void update_location(int array[width][height], int ref[width][height], int pos[2], char input, struct tile tiles[4])
 {
 	array[pos[1]][pos[0]] = ref[pos[1]][pos[0]];
 	if (input == 'w')
@@ -137,7 +161,7 @@ void update_location(int array[width][height], int ref[width][height], int pos[2
 		if (pos[0] - 1 >= 0 && pos[0] - 1 <= height - 1)
 		{
 			
-		pos[0] = pos[0] - 1;
+		pos[0] = pos[0] - col_check(array, ref, pos, input, tiles);
 			
 		}
 	}
@@ -146,7 +170,7 @@ void update_location(int array[width][height], int ref[width][height], int pos[2
 		if (pos[0] + 1 >= 0 && pos[0] + 1 <= height - 1)
 		{
 			
-		pos[0] = pos[0] + 1;
+		pos[0] = pos[0] + col_check(array, ref, pos, input, tiles);
 			
 		}
 	}
@@ -155,7 +179,7 @@ void update_location(int array[width][height], int ref[width][height], int pos[2
 		if (pos[1] - 1 >= 0 && pos[1] - 1 <= width - 1)
 		{
 			
-		pos[1] = pos[1] - 1;
+		pos[1] = pos[1] - col_check(array, ref, pos, input, tiles);
 			
 		}
 	}
@@ -164,7 +188,7 @@ void update_location(int array[width][height], int ref[width][height], int pos[2
 		if (pos[1] + 1 >= 0 && pos[1] + 1 <= width - 1)
 		{
 			
-		pos[1] = pos[1] + 1;
+		pos[1] = pos[1] + col_check(array, ref, pos, input, tiles);
 			
 		}
 	}

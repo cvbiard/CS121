@@ -49,5 +49,8 @@
     <Text Include="PlayerTile.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="TestDoor.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

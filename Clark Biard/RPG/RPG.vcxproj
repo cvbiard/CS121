@@ -148,6 +148,7 @@
   <ItemGroup>
     <Text Include="PlayerTile.txt" />
     <Text Include="settings.txt" />
+    <Text Include="TestDoor.txt" />
     <Text Include="TestTile.txt" />
     <Text Include="TestTile2.txt" />
     <Text Include="TestZoneF.txt" />

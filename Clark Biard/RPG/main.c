@@ -39,6 +39,7 @@ int main(void)
 		TestTile.layout[j] = malloc(3 * sizeof(char*)); // allocates the second dimension
 	}
 	TestTile.asset = fopen("TestTile.txt", "r");
+	TestTile.flags[0] = '\0';
 
 	struct tile TestTile2;
 	TestTile2.id = 2;
@@ -48,8 +49,20 @@ int main(void)
 		TestTile2.layout[j] = malloc(3 * sizeof(char*)); // allocates the second dimension
 	}
 	TestTile2.asset = fopen("TestTile2.txt", "r");
+	TestTile2.flags[0] = 'c';
 
-	struct tile tiles[3] = {Player, TestTile, TestTile2 };
+	struct tile TestDoor;
+	TestDoor.id = 3;
+	TestDoor.layout = malloc(3 * sizeof(char*)); // allocates one dimension
+	for (int j = 0; j < 6; j++)
+	{
+		TestDoor.layout[j] = malloc(3 * sizeof(char*)); // allocates the second dimension
+	}
+	TestDoor.asset = fopen("TestDoor.txt", "r");
+	TestDoor.flags[0] = '\0';
+	TestDoor.flags[1] = 'd';
+
+	struct tile tiles[4] = {Player, TestTile, TestTile2, TestDoor };
 
 	int pos[2] = { player.xpos, player.ypos };
 
@@ -58,6 +71,8 @@ int main(void)
 	load_tile(TestTile);
 	init_tile(TestTile2);
 	load_tile(TestTile2);
+	init_tile(TestDoor);
+	load_tile(TestDoor);
 	init_tile(Player);
 	load_tile(Player);
 	load_scene(TestZone, screen, tile_ids, ref, tiles);
@@ -70,7 +85,7 @@ int main(void)
 	{
 		input = _getche();
 
-		update_location(tile_ids, ref, pos, input);
+		update_location(tile_ids, ref, pos, input, tiles);
 		input = '\0';
 		system("cls");
 		print_screen(screen, pos, tiles, tile_ids);
