@@ -52,5 +52,8 @@
     <Text Include="TestDoor.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="Dummy.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

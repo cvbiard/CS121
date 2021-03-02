@@ -146,6 +146,7 @@
     <ClInclude Include="header.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Dummy.txt" />
     <Text Include="PlayerTile.txt" />
     <Text Include="settings.txt" />
     <Text Include="TestDoor.txt" />

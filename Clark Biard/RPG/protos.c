@@ -30,7 +30,7 @@ void init_screen(char array[60][30])
 		}
 	}
 }
-void print_screen(char array[60][30], int pos[2], struct tile tiles[3], int tile_ids[width][height])
+void print_screen(char array[60][30], int pos[2], struct tile local_tiles[100], int tile_ids[width][height])
 {
 
 	for (int i = 0; i < height * 3; i = i + 3)
@@ -41,7 +41,7 @@ void print_screen(char array[60][30], int pos[2], struct tile tiles[3], int tile
 			{
 				for (int l = 0; l < 3; l++)
 				{
-					array[k + j][i + l] = tiles[tile_ids[j / 6][i / 3]].layout[k][l];
+					array[k + j][i + l] = local_tiles[tile_ids[j / 6][i / 3]].layout[k][l];
 				}
 			}
 		}
@@ -77,15 +77,15 @@ void print_screen(char array[60][30], int pos[2], struct tile tiles[3], int tile
 	}
 	printf("\n");
 }
-int col_check(char array[60][30], int ref[width][height], int pos[2], char input, struct tile tiles[4])
+int col_check(int array[60][30], int ref[width][height], int pos[2], char input, struct tile local_tiles[100])
 {
 	if (input == 'w')
 	{
-		if (tiles[ref[pos[1]][pos[0] - 1]].flags[0] == 'c')
+		if (local_tiles[ref[pos[1]][pos[0] - 1]].flags[0] == 'c')
 		{
 			return 0;
 		}
-		else if (tiles[ref[pos[1]][pos[0] - 1]].flags[1] == 'd')
+		else if (local_tiles[ref[pos[1]][pos[0] - 1]].flags[1] == 'd')
 		{
 			printf("\nThis is a door, it leads somewhere, but not right now.\n");
 			system("PAUSE");
@@ -99,11 +99,11 @@ int col_check(char array[60][30], int ref[width][height], int pos[2], char input
 	if (input == 's')
 	{
 		
-		if (tiles[ref[pos[1]][pos[0] + 1]].flags[0] == 'c')
+		if (local_tiles[ref[pos[1]][pos[0] + 1]].flags[0] == 'c')
 		{
 				return 0;
 		}
-		else if(tiles[ref[pos[1]][pos[0] + 1]].flags[1] == 'd')
+		else if(local_tiles[ref[pos[1]][pos[0] + 1]].flags[1] == 'd')
 		{
 			printf("\nThis is a door, it leads somewhere, but not right now.\n");
 			system("PAUSE");
@@ -118,11 +118,11 @@ int col_check(char array[60][30], int ref[width][height], int pos[2], char input
 	if (input == 'a')
 	{
 		
-		if (tiles[ref[pos[1] - 1][pos[0]]].flags[0] == 'c')
+		if (local_tiles[ref[pos[1] - 1][pos[0]]].flags[0] == 'c')
 		{
 				return 0;
 		}
-		else if (tiles[ref[pos[1] - 1][pos[0]]].flags[1] == 'd')
+		else if (local_tiles[ref[pos[1] - 1][pos[0]]].flags[1] == 'd')
 		{
 			printf("\nThis is a door, it leads somewhere, but not right now.\n");
 			system("PAUSE");
@@ -136,11 +136,11 @@ int col_check(char array[60][30], int ref[width][height], int pos[2], char input
 	}
 	if (input == 'd')
 	{
-		if (tiles[ref[pos[1] + 1][pos[0]]].flags[0] == 'c')
+		if (local_tiles[ref[pos[1] + 1][pos[0]]].flags[0] == 'c')
 		{
 				return 0;
 		}
-		else if (tiles[ref[pos[1] + 1][pos[0]]].flags[1] == 'd')
+		else if (local_tiles[ref[pos[1] + 1][pos[0]]].flags[1] == 'd')
 		{
 			printf("\nThis is a door, it leads somewhere, but not right now.\n");
 			system("PAUSE");
@@ -153,7 +153,7 @@ int col_check(char array[60][30], int ref[width][height], int pos[2], char input
 	}
 	return 0;
 }
-void update_location(int array[width][height], int ref[width][height], int pos[2], char input, struct tile tiles[4])
+void update_location(int array[width][height], int ref[width][height], int pos[2], char input, struct tile local_tiles[100])
 {
 	array[pos[1]][pos[0]] = ref[pos[1]][pos[0]];
 	if (input == 'w')
@@ -161,7 +161,7 @@ void update_location(int array[width][height], int ref[width][height], int pos[2
 		if (pos[0] - 1 >= 0 && pos[0] - 1 <= height - 1)
 		{
 			
-		pos[0] = pos[0] - col_check(array, ref, pos, input, tiles);
+		pos[0] = pos[0] - col_check(array, ref, pos, input, local_tiles);
 			
 		}
 	}
@@ -170,7 +170,7 @@ void update_location(int array[width][height], int ref[width][height], int pos[2
 		if (pos[0] + 1 >= 0 && pos[0] + 1 <= height - 1)
 		{
 			
-		pos[0] = pos[0] + col_check(array, ref, pos, input, tiles);
+		pos[0] = pos[0] + col_check(array, ref, pos, input, local_tiles);
 			
 		}
 	}
@@ -179,7 +179,7 @@ void update_location(int array[width][height], int ref[width][height], int pos[2
 		if (pos[1] - 1 >= 0 && pos[1] - 1 <= width - 1)
 		{
 			
-		pos[1] = pos[1] - col_check(array, ref, pos, input, tiles);
+		pos[1] = pos[1] - col_check(array, ref, pos, input, local_tiles);
 			
 		}
 	}
@@ -188,7 +188,7 @@ void update_location(int array[width][height], int ref[width][height], int pos[2
 		if (pos[1] + 1 >= 0 && pos[1] + 1 <= width - 1)
 		{
 			
-		pos[1] = pos[1] + col_check(array, ref, pos, input, tiles);
+		pos[1] = pos[1] + col_check(array, ref, pos, input, local_tiles);
 			
 		}
 	}
@@ -196,7 +196,7 @@ void update_location(int array[width][height], int ref[width][height], int pos[2
 	
 	array[pos[1]][pos[0]] = 0;
 }
-void load_scene(struct asset scene, char array[60][30], int tile_ids[width][height], int ref[width][height], struct tile tiles[2])
+void load_scene(struct asset scene, char array[60][30], int tile_ids[width][height], int ref[width][height], struct tile local_tiles[100], int tile_frequency[100])
 {
 	for (int i = 0; i < height; i++)
 	{
@@ -207,6 +207,8 @@ void load_scene(struct asset scene, char array[60][30], int tile_ids[width][heig
 		}
 	}
 	rewind(scene.visual_asset);
+	get_frequency(tile_ids, tile_frequency);
+	//print_frequency(tile_frequency);
 	//print_tile_ids(tile_ids);
 
 	/*for (int i = 0; i < height * 3; i = i + 3)
@@ -369,6 +371,13 @@ void init_tile(struct tile tile)
 	}
 
 }
+void init_tiles(struct tile local_tiles[100])
+{
+	for (int i = 0; i < 100; i++)
+	{
+		init_tile(local_tiles[i]);
+	}
+}
 void print_tile(struct tile tile)
 {
 	for (int i = 0; i < 3; i++)
@@ -389,5 +398,46 @@ void print_tile_ids(int tile_ids[width][height])
 			printf("%d", tile_ids[j][i]);
 		}
 		printf("\n");
+	}
+}
+void get_frequency(int tile_ids[width][height], int tile_frequency[100])
+{
+	for (int i = 0; i < height; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			tile_frequency[tile_ids[j][i]] = tile_frequency[tile_ids[j][i]] + 1;
+		}
+	}
+}
+void print_frequency(int tile_frequency[100])
+{
+	for (int i = 0; i < 100; i++)
+	{
+		printf("%d ", tile_frequency[i]);
+	}
+}
+void load_tiles(int tile_frequency[100], struct tile local_tiles[100], struct tile Dummy, struct tile Tiles[100])
+{
+	for (int i = 0; i < 100; i++)
+	{
+		if (tile_frequency[i] > 0)
+		{
+			for (int j = 0; j < 100; j++)
+			{
+				if (local_tiles[j].id == 0)
+				{
+					local_tiles[j].id = Tiles[i].id;
+					local_tiles[j].layout = Dummy.layout;
+					local_tiles[j].asset = fopen(Tiles[i].file, "r");
+					local_tiles[j].flags[0] = Tiles[i].flags[0];
+					local_tiles[j].flags[1] = Tiles[i].flags[1];
+				}
+			}
+		}
+	}
+	for (int i = 0; i < 100; i++)
+	{
+		load_tile(local_tiles[i]);
 	}
 }
