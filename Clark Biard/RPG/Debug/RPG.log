@@ -1,122 +1,18 @@
-﻿cl : command line warning D9025: overriding '/analyze-' with '/analyze:stacksize40000'
-  main.c
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(14,29): warning C4047: '=': 'char' differs in levels of indirection from 'char [10]'
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(30,42): warning C4047: '=': 'char' differs in levels of indirection from 'char [15]'
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(35,42): warning C4047: '=': 'char' differs in levels of indirection from 'char [13]'
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(40,44): warning C4047: '=': 'char' differs in levels of indirection from 'char [14]'
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(45,38): warning C4047: '=': 'char' differs in levels of indirection from 'char [13]'
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(8,34): warning C4101: 'functional': unreferenced local variable
+﻿  main.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(16,32): warning C4047: '=': 'char' differs in levels of indirection from 'char [10]'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(35,45): warning C4047: '=': 'char' differs in levels of indirection from 'char [15]'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(42,45): warning C4047: '=': 'char' differs in levels of indirection from 'char [13]'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(49,47): warning C4047: '=': 'char' differs in levels of indirection from 'char [14]'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(56,41): warning C4047: '=': 'char' differs in levels of indirection from 'char [13]'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(72,67): warning C4047: '=': 'char *' differs in levels of indirection from 'char **'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(59,1): warning C4047: 'initializing': 'int' differs in levels of indirection from 'tile *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(59,1): warning C4047: 'initializing': 'char **' differs in levels of indirection from 'tile *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(59,1): warning C4133: 'initializing': incompatible types - from 'tile *' to 'FILE *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(59,1): warning C4047: 'initializing': 'char' differs in levels of indirection from 'tile *'
   protos.c
 C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(164,36): warning C4048: different array subscripts: 'int (*)[30]' and 'int (*)[10]'
 C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(173,36): warning C4048: different array subscripts: 'int (*)[30]' and 'int (*)[10]'
 C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(182,36): warning C4048: different array subscripts: 'int (*)[30]' and 'int (*)[10]'
 C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(191,36): warning C4048: different array subscripts: 'int (*)[30]' and 'int (*)[10]'
-  Compiling...
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(8): warning C6031: Return value ignored: 'fscanf'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(205): warning C6031: Return value ignored: 'fscanf'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(354): warning C6031: Return value ignored: 'fscanf'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(356): warning C6031: Return value ignored: 'fscanf'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\protos.c(366): warning C6246: Local declaration of 'i' hides declaration of the same name in outer scope. For additional information, see previous declaration at line '363' of 'c:\users\clark\desktop\cs121\clark biard\rpg\protos.c'.: Lines: 363
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(19): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Dummy.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(68): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile0.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(79): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile1.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(90): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile2.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(101): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile3.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(112): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile4.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(123): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile5.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(134): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile6.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(145): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile7.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(156): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile8.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(167): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile9.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(178): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile10.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(189): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile11.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(200): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile12.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(211): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile13.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(222): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile14.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(233): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile15.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(244): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile16.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(255): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile17.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(266): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile18.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(277): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile19.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(288): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile20.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(299): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile21.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(310): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile22.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(321): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile23.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(332): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile24.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(343): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile25.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(354): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile26.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(365): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile27.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(376): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile28.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(387): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile29.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(398): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile30.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(409): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile31.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(420): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile32.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(431): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile33.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(442): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile34.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(453): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile35.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(464): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile36.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(475): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile37.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(486): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile38.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(497): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile39.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(508): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile40.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(519): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile41.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(530): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile42.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(541): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile43.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(552): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile44.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(563): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile45.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(574): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile46.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(585): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile47.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(596): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile48.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(607): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile49.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(618): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile50.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(629): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile51.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(640): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile52.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(651): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile53.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(662): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile54.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(673): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile55.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(684): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile56.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(695): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile57.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(706): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile58.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(717): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile59.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(728): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile60.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(739): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile61.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(750): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile62.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(761): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile63.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(772): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile64.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(783): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile65.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(794): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile66.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(805): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile67.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(816): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile68.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(827): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile69.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(838): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile70.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(849): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile71.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(860): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile72.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(871): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile73.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(882): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile74.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(893): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile75.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(904): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile76.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(915): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile77.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(926): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile78.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(937): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile79.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(948): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile80.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(959): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile81.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(970): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile82.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(981): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile83.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(992): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile84.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1003): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile85.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1014): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile86.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1025): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile87.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1036): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile88.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1047): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile89.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1058): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile90.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1069): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile91.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1080): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile92.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1091): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile93.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1102): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile94.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1113): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile95.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1124): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile96.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1135): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile97.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1146): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile98.layout'.
-C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\main.c(1157): warning C6200: Index '5' is out of valid index range '0' to '2' for non-stack buffer 'Tile99.layout'.
   Generating Code...
   RPG.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\Debug\RPG.exe

@@ -208,7 +208,7 @@ void load_scene(struct asset scene, char array[60][30], int tile_ids[width][heig
 	}
 	rewind(scene.visual_asset);
 	get_frequency(tile_ids, tile_frequency);
-	//print_frequency(tile_frequency);
+	print_frequency(tile_frequency);
 	//print_tile_ids(tile_ids);
 
 	/*for (int i = 0; i < height * 3; i = i + 3)
@@ -345,17 +345,17 @@ void print_menu(char text[])
 	}
 	printf("\n");
 }
-void load_tile(struct tile tile)
+void load_tile(struct tile* tile)
 {
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 6; j++)
 		{
-			fscanf(tile.asset, "%c", &tile.layout[j][i]);
+			fscanf((tile)->asset, "%c", &(tile)->layout[j][i]);
 		}
-		fscanf(tile.asset, "%*c");
+		fscanf((tile)->asset, "%*c");
 	}
-	rewind(tile.asset);
+	rewind((tile)->asset);
 }
 void init_tile(struct tile tile)
 {
@@ -367,6 +367,20 @@ void init_tile(struct tile tile)
 		{
 			hind = i;
 			tile.layout[vind][hind] = '~';
+		}
+	}
+
+}
+void init_tile_pointer(struct tile* tile)
+{
+	int vind, hind;
+	for (int i = 0; i < 3; i++)
+	{
+		vind = i;
+		for (int i = 0; i < 6; i++)
+		{
+			hind = i;
+			tile->layout[vind][hind] = '~';
 		}
 	}
 
@@ -416,28 +430,42 @@ void print_frequency(int tile_frequency[100])
 	{
 		printf("%d ", tile_frequency[i]);
 	}
+	printf("\n");
 }
-void load_tiles(int tile_frequency[100], struct tile local_tiles[100], struct tile Dummy, struct tile Tiles[100])
+void load_tiles(int tile_frequency[100], struct tile local_tiles[100], struct tile* Dummy, struct tile Tiles[100])
 {
 	for (int i = 0; i < 100; i++)
 	{
+		printf("I is currently %d.\n", i);
 		if (tile_frequency[i] > 0)
 		{
 			for (int j = 0; j < 100; j++)
 			{
 				if (local_tiles[j].id == 0)
 				{
+					printf("J is currently %d.\n", j);
+					printf("Id is %d.\n", Tiles[i].id);
 					local_tiles[j].id = Tiles[i].id;
-					local_tiles[j].layout = Dummy.layout;
+					local_tiles[j].layout = Dummy->layout;
 					local_tiles[j].asset = fopen(Tiles[i].file, "r");
 					local_tiles[j].flags[0] = Tiles[i].flags[0];
 					local_tiles[j].flags[1] = Tiles[i].flags[1];
+					j = 100;
 				}
 			}
 		}
 	}
 	for (int i = 0; i < 100; i++)
 	{
-		load_tile(local_tiles[i]);
+		load_tile((local_tiles+i));
+	}
+}
+void init_local_tiles(struct tile local_tiles[100])
+{
+	for (int i = 0; i < 100; i++)
+	{
+		local_tiles[i].id = 0;
+		local_tiles[i].flags[0] = '\0';
+		local_tiles[i].flags[1] = '\0';
 	}
 }
