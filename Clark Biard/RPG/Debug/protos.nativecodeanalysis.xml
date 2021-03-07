@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\</FILEPATH>
+      <FILENAME>protos.c</FILENAME>
+      <LINE>8</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'fscanf'.</DESCRIPTION>
+    <FUNCTION>load_settings</FUNCTION>
+    <DECORATED>load_settings</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\</FILEPATH>
+      <FILENAME>protos.c</FILENAME>
+      <LINE>205</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'fscanf'.</DESCRIPTION>
+    <FUNCTION>load_scene</FUNCTION>
+    <DECORATED>load_scene</DECORATED>
+    <FUNCLINE>199</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\</FILEPATH>
+      <FILENAME>protos.c</FILENAME>
+      <LINE>354</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'fscanf'.</DESCRIPTION>
+    <FUNCTION>load_tile</FUNCTION>
+    <DECORATED>load_tile</DECORATED>
+    <FUNCLINE>348</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\</FILEPATH>
+      <FILENAME>protos.c</FILENAME>
+      <LINE>356</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'fscanf'.</DESCRIPTION>
+    <FUNCTION>load_tile</FUNCTION>
+    <DECORATED>load_tile</DECORATED>
+    <FUNCLINE>348</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\</FILEPATH>
+      <FILENAME>protos.c</FILENAME>
+      <LINE>366</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>6246</DEFECTCODE>
+    <DESCRIPTION>Local declaration of 'i' hides declaration of the same name in outer scope. For additional information, see previous declaration at line '363' of 'c:\users\clark\desktop\cs121\clark biard\rpg\protos.c'.</DESCRIPTION>
+    <FUNCTION>init_tile</FUNCTION>
+    <DECORATED>init_tile</DECORATED>
+    <FUNCLINE>360</FUNCLINE>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\Clark\Desktop\CS121\Clark Biard\RPG\</FILEPATH>
+        <FILENAME>protos.c</FILENAME>
+        <LINE>363</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+    </PATH>
+  </DEFECT>
+</DEFECTS>
