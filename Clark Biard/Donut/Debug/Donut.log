@@ -1,0 +1,13 @@
+﻿  donut.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\donut.c(20,42): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\donut.c(21,31): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\donut.c(22,65): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\donut.c(27,18): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\donut.c(27,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\donut.c(29,1): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\donut.c(29,1): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\donut.c(31,31): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\donut.c(31,31): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\donut.c(32,1): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\donut.c(32,1): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Donut.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\Donut\Debug\Donut.exe

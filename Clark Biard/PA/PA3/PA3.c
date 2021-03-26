@@ -30,20 +30,6 @@ double calculate_standard_deviation(double variance)
 }
 double find_max(double number1, double number2, double number3, double number4, double number5)
 {
-	//This is how I originally built it but figured we weren't supposed to be using arrays and for loops yet :(
-	/*double current = 0.0, max = 0.0;
-	double numbers[5] = { number1, number2, number3, number4, number5 };
-	int i;
-	for (i = 0; i<5; i++)
-	{
-		current = numbers[i];
-		if (max < current)
-		{
-			max = current;
-		}
-	}
-	return max;*/
-
 	double max = 0.0;
 	if (number1 >= number2 && number1 >= number3 && number1 >= number4 && number1 >= number5)
 	{
@@ -69,18 +55,6 @@ double find_max(double number1, double number2, double number3, double number4, 
 }
 double find_min(double number1, double number2, double number3, double number4, double number5)
 {
-	/*double current = 0.0, min = 0.0;
-	double numbers[5] = { number1, number2, number3, number4, number5 };
-	int i;
-	for (i = 0; i < 5; i++)
-	{
-		current = numbers[i];
-		if (min > current)
-		{
-			min = current;
-		}
-	}
-	return min;*/
 
 	double min = 0.0;
 	if (number1 <= number2 && number1 <= number3 && number1 <= number4 && number1 <= number5)
