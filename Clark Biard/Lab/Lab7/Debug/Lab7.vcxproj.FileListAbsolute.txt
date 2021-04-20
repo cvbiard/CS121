@@ -1,2 +1,4 @@
 C:\Users\Clark\Desktop\Lab7\Debug\Lab7.exe
 C:\Users\Clark\Desktop\Lab7\Debug\Lab7.pdb
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab7\Debug\Lab7.exe
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab7\Debug\Lab7.pdb

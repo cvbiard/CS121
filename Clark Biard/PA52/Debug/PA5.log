@@ -1,0 +1,18 @@
+﻿  main.c
+C:\Users\Clark\Desktop\PA5\main.c(33,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+  protos.c
+C:\Users\Clark\Desktop\PA5\protos.c(4,1): warning C4029: declared formal parameter list different from definition
+C:\Users\Clark\Desktop\PA5\protos.c(195,11): warning C4473: 'printf' : not enough arguments passed for format string
+C:\Users\Clark\Desktop\PA5\protos.c(195,11): message : placeholders and their parameters expect 3 variadic arguments, but 1 were provided
+C:\Users\Clark\Desktop\PA5\protos.c(195,11): message : the missing variadic argument 3 is required by format string '%*c'
+C:\Users\Clark\Desktop\PA5\protos.c(195,11): message : this argument is used by a conversion specifier
+C:\Users\Clark\Desktop\PA5\protos.c(207,13): warning C4473: 'printf' : not enough arguments passed for format string
+C:\Users\Clark\Desktop\PA5\protos.c(207,13): message : placeholders and their parameters expect 3 variadic arguments, but 1 were provided
+C:\Users\Clark\Desktop\PA5\protos.c(207,13): message : the missing variadic argument 3 is required by format string '%*c'
+C:\Users\Clark\Desktop\PA5\protos.c(207,13): message : this argument is used by a conversion specifier
+C:\Users\Clark\Desktop\PA5\protos.c(217,6): warning C4553: '==': result of expression not used; did you intend '='?
+  Generating Code...
+C:\Users\Clark\Desktop\PA5\protos.c(219): warning C4715: 'select_combo': not all control paths return a value
+C:\Users\Clark\Desktop\PA5\protos.c(65): warning C4715: 'game_menu': not all control paths return a value
+C:\Users\Clark\Desktop\PA5\protos.c(83): warning C4716: 'select_reroll': must return a value
+  PA5.vcxproj -> C:\Users\Clark\Desktop\PA5\Debug\PA5.exe
