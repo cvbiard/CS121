@@ -1,11 +1,11 @@
 #include "header.h"
 
-int main(void)
+void main(void)
 {
 	FILE* input = fopen("in.txt", "r");
-	int arr[5] = { 0, 0, 0, 0, 0 };
+	int arr[1] = { 0 };
 
 	read_to_array(arr, input);
+	printf("Made it out the func baby\n");
 
-	return 0;
 }

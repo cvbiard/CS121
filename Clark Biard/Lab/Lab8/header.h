@@ -2,5 +2,6 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 void read_to_array(int arr[], FILE* input);
