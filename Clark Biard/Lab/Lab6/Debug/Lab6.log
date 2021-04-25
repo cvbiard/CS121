@@ -1,0 +1,4 @@
+﻿  protos.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab6\protos.c(78,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab6\protos.c(102): warning C4716: 'guesser': must return a value
+  Lab6.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab6\Debug\Lab6.exe

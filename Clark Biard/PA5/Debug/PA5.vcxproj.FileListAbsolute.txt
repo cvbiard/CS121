@@ -1,0 +1,4 @@
+C:\Users\Clark\Desktop\PA5\Debug\PA5.exe
+C:\Users\Clark\Desktop\PA5\Debug\PA5.pdb
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA52\Debug\PA5.exe
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA52\Debug\PA5.pdb

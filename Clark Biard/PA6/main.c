@@ -73,7 +73,7 @@ int main(void)
 	carrier.sunkp2 = 0;
 
 	struct ship ships[5] = { destroyer, submarine, cruiser, battleship, carrier };
-	struct player playa[2] = { player, bot };
+	struct player players[2] = { player, bot };
 	
 	game_menu();
 	turn = pick_turns();
@@ -83,26 +83,26 @@ int main(void)
 	print_board(player, 0);
 	player_ships(player, ships);
 
-	while (check_winner(playa, ships) == 0)
+	while (check_winner(players, ships) == 0)
 	{
 		if (turn == 0)
 		{
 			system("cls");
 			print_board(bot, 0);
 			print_board(player, 0);
-			pick_shot(player, playa, ships, 0, counter, output);
+			pick_shot(player, players, ships, 0, counter, output);
 			system("PAUSE");
 			system("cls");
 		}
 			system("cls");
 			print_board(bot, 0);
 			print_board(player, 0);
-			pick_shot(bot, playa, ships, 0, counter, output);
+			pick_shot(bot, players, ships, 0, counter, output);
 			system("PAUSE");
 			system("cls");
 			print_board(bot, 0);
 			print_board(player, 0);
-			pick_shot(player, playa, ships, 0, counter, output);
+			pick_shot(player, players, ships, 0, counter, output);
 			system("PAUSE");
 			system("cls");
 			counter = counter + 1;
