@@ -52,3 +52,48 @@ void print_arr(int arr[], int number)
 		printf("Array at %d is %d.\n", i, arr[i]);
 	}
 }
+void print_hangman(int man_counter, char word[], int letters_guessed[])
+{
+	printf("%d out of 6 guesses.\n\n", man_counter);
+
+	for (int i = 0; i < 5; i++)
+	{
+		if (letters_guessed[i] == 1)
+		{
+			printf("%c", word[i]);
+		}
+		else
+		{
+			printf("*");
+		}
+	}
+	printf("\n");
+}
+int get_guess(char word[], int letters_guessed[])
+{
+	char guess = '\0';
+
+	printf("Please enter a guess!\n");
+	scanf("%c%*c", &guess);
+
+	for (int i = 0; i < 5; i++)
+	{
+		if (word[i] == guess)
+		{
+			letters_guessed[i] = 1;
+			return 0;
+		}
+	}
+	return 1;
+}
+int check_win(int letters_guessed[])
+{
+	for (int i = 0; i < 5; i++)
+	{
+		if (letters_guessed[i] == 0)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}

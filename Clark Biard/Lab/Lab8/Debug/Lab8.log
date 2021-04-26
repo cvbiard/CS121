@@ -1,3 +1,5 @@
 ﻿  main.c
-C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab8\main.c(10,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab8\main.c(15,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab8\main.c(7,6): warning C4101: 'arr2': unreferenced local variable
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab8\main.c(8,6): warning C4101: 'ft': unreferenced local variable
   Lab8.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab8\Debug\Lab8.exe
