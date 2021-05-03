@@ -1,6 +1,12 @@
 ﻿  main.c
   protos.c
-C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 9\protos.c(39,33): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 9\protos.c(33,28): warning C4028: formal parameter 1 different from declaration
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 9\protos.c(48,20): warning C4047: '=': 'char' differs in levels of indirection from 'char *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 9\protos.c(49,38): warning C4047: '=': 'char' differs in levels of indirection from 'char *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 9\protos.c(53,21): warning C4047: '=': 'char *' differs in levels of indirection from 'char'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 9\protos.c(54,39): warning C4047: '=': 'char *' differs in levels of indirection from 'char'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 9\protos.c(59,10): warning C4477: 'printf' : format string '%c' requires an argument of type 'int', but variadic argument 1 has type 'char *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 9\protos.c(62,15): warning C4047: 'return': 'char *' differs in levels of indirection from 'char **'
 C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 9\protos.c(68,35): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
 C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 9\protos.c(89,42): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
 C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 9\protos.c(94,47): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'

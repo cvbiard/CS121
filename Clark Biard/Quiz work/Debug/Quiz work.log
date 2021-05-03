@@ -1,0 +1,6 @@
+﻿  main.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\Quiz work\main.c(84,30): warning C4047: 'function': 'char **' differs in levels of indirection from 'char [4]'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Quiz work\main.c(84,24): warning C4024: 'recursive_string_copy': different types for formal and actual parameter 1
+C:\Users\Clark\Desktop\CS121\Clark Biard\Quiz work\main.c(84,36): warning C4047: 'function': 'char **' differs in levels of indirection from 'char [4]'
+C:\Users\Clark\Desktop\CS121\Clark Biard\Quiz work\main.c(84,32): warning C4024: 'recursive_string_copy': different types for formal and actual parameter 2
+  Quiz work.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\Quiz work\Debug\Quiz work.exe
