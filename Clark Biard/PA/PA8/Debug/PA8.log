@@ -1,0 +1,4 @@
+﻿  protos.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA\PA8\protos.c(7,40): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
+C:\Users\Clark\Desktop\CS121\Clark Biard\PA\PA8\protos.c(15,39): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+  PA8.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\PA\PA8\Debug\PA8.exe

@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 10\main.c(29,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Lab 10.vcxproj -> C:\Users\Clark\Desktop\CS121\Clark Biard\Lab\Lab 10\Debug\Lab 10.exe
